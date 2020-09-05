@@ -1,0 +1,6 @@
+[user]
+	name = Paul Schuberth
+	email = mail@paulschuberth.de
+
+[core]
+	autocrlf = input
