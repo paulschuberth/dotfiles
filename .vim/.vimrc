@@ -4,7 +4,7 @@ colorscheme desert
 
 " Visuals
 syntax on
-set nonumber
+" set nonumber
 set relativenumber
 set nowrap
 set fillchars+=vert:\ " invisble vertical split line.
@@ -101,7 +101,3 @@ autocmd FileType tex nmap <buffer> C :!rubber --clean<CR>
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-
-let g:HardMode_level = 'wannabe'
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
