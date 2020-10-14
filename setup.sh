@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-filesAndDirsToLink=".vim/ .vim/.vimrc .alacritty .tmux.conf .oh-my-zsh .zshrc"
+filesAndDirsToLink=".vim/ .vim/.vimrc alacritty.yml .tmux.conf .oh-my-zsh .zshrc"
 
 # Environment setup
 script_dir=$(pwd)
@@ -10,6 +10,10 @@ link_to_home() {
   original="$script_dir"/"$1"
   basename=$(basename $original)
   link="$HOME/$basename"
+
+  if [[ $basename == "alacritty.yml" ]]; then
+      link="$HOME/.config/alacritty/alacritty.yml"
+  fi
 
   if [ -z "$1" ]; then
     echo "No source file defined. Cannot link to home."
