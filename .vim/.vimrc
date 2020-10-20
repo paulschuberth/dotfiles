@@ -5,7 +5,7 @@ colorscheme desert
 " Visuals
 syntax on
 " set nonumber
-set relativenumber
+set number relativenumber
 set nowrap
 set fillchars+=vert:\ " invisble vertical split line.
 set lazyredraw
