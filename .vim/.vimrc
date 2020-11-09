@@ -17,6 +17,9 @@ set statusline+=%(\ [%M%R]%) " Modified and readonly flags.
 set statusline+=%= " Switch to right aligned.
 set statusline+=%l/%L " Current line / total lines.
 
+" Search through subfolders
+set path+=**
+
 " Whitespace.
 " Spaces instead of tabs.
 set expandtab
