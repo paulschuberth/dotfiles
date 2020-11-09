@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-filesAndDirsToLink=".vim/ .vim/.vimrc alacritty.yml .tmux.conf .oh-my-zsh .zshrc"
+filesAndDirsToLink=".vim/ .vim/.vimrc alacritty.yml .tmux.conf .oh-my-zsh .zshrc karabiner.json"
 
 # Environment setup
 script_dir=$(pwd)
@@ -13,6 +13,10 @@ link_to_home() {
 
   if [[ $basename == "alacritty.yml" ]]; then
       link="$HOME/.config/alacritty/alacritty.yml"
+  fi
+
+  if [[ $basename == "karabiner.json" ]]; then
+      link="$HOME/.config/karabiner/karabiner.json"
   fi
 
   if [ -z "$1" ]; then
