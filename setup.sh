@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# load submodules
+git submodule update --init --recursive
+
 filesAndDirsToLink=".vim/ .vim/.vimrc alacritty.yml .tmux.conf .oh-my-zsh .zshrc karabiner.json"
 
 # Environment setup
