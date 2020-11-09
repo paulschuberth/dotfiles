@@ -49,7 +49,7 @@ set wildmenu
 set wildignore+=*.aux,*.log,*.out,*.pdf
 
 " Start scrolling 3 lines from border.
-set scrolloff=3
+set scrolloff=7
 
 " Matching brace
 set showmatch
