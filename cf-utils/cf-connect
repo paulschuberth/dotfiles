@@ -1,0 +1,107 @@
+#!/bin/sh
+
+if [[ $1 == '' ]]; then
+    echo "Usage: $0 <name of a cf service>"
+fi
+
+removeQuotes() {
+    input=$1
+    temp="${input%\"}"
+    temp="${temp#\"}"
+    echo $temp
+}
+
+servicekey=$(cf service-key $1 key | tail -n +3)
+
+endpoint=$(echo ${servicekey} | jq '.endpoint')
+endpoint=$(removeQuotes "$endpoint")
+
+username=$(echo ${servicekey} | jq '.username')
+if [ $username == 'null' ]; then    
+    username=$(echo ${servicekey} | jq '.user')
+fi
+username=$(removeQuotes "$username")
+
+name=$(echo ${servicekey} | jq '.name')
+name=$(removeQuotes "$name")
+
+password=$(echo ${servicekey} | jq '.password')
+password=$(removeQuotes "$password")
+
+port=$(echo ${servicekey} | jq '.port')
+port=$(removeQuotes "$port")
+
+uri=$(echo ${servicekey} | jq '.uri')
+
+if [ $uri == 'null' ]; then    
+    uri=$(echo ${servicekey} | jq '.url')
+fi
+
+uri=$(removeQuotes "$uri")
+isMysql=false
+isMongo=false
+
+if [[ "$uri" == "mysql"* ]]; then
+    isMysql=true
+fi
+
+if [[ "$uri" == "mongodb"* ]]; then
+    isMongo=true
+fi
+
+
+localport=$port
+target=mysql-docker
+for arg in "$@"
+do
+    case $arg in
+        -p)
+        localport="$3"
+        shift
+        shift
+        ;;
+        
+        --port=*)
+        localport="${arg#*=}"
+        shift
+        ;;
+        
+        -t)
+        target="$3"
+        shift
+        shift
+        ;;
+
+        --target=*)
+        target="${arg#*=}"
+        shift
+        ;;
+    esac
+done
+
+if $isMysql ; then
+    mysql_creds_file=/tmp/cf-connect-creds
+    touch $mysql_creds_file
+    chmod 600 $mysql_creds_file
+    echo "[client]" > $mysql_creds_file
+    echo "user=$username" >> $mysql_creds_file 
+    echo "password=$password" >> $mysql_creds_file 
+    
+    echo mysql --defaults-extra-file="$mysql_creds_file" -h 127.0.0.1 -D "$name" -P "$localport" -u "$username" | pbcopy
+    
+    cf ssh $target -L $localport:$endpoint:$port
+    
+    # remove creds file after closing connection
+    rm $mysql_creds_file
+fi
+
+if $isMongo ; then
+    rdsCAFile=/tmp/rds-combined-ca-bundle.pem
+    if [[ ! -f "$rdsCAFile" ]]; then
+        touch $rdsCAFile
+        curl -o $rdsCAFile https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem 
+    fi
+
+    echo "mongo mongodb://$username:$password@127.0.0.1:$localport --ssl --sslAllowInvalidHostnames --sslCAFile $rdsCAFile" | pbcopy
+    cf ssh $target -L $localport:$endpoint:$port
+fi

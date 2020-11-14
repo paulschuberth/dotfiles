@@ -6,6 +6,8 @@ ZSH_DISABLE_COMPFIX=true
 # add composer to path
 export PATH=$HOME/.composer/vendor/bin:$PATH
 
+# add cf-utils to path
+export PATH=$PATH:$HOME/dotfiles/cf-utils
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/schuberth/.oh-my-zsh"
 
