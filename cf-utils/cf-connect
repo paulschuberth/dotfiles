@@ -80,7 +80,7 @@ do
 done
 
 if $isMysql ; then
-    mysql_creds_file=/tmp/cf-connect-creds
+    mysql_creds_file=/tmp/cf-connect-creds-$name
     touch $mysql_creds_file
     chmod 600 $mysql_creds_file
     echo "[client]" > $mysql_creds_file
