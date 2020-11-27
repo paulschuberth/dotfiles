@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [[ $1 == '' ]]; then
+if [[ "$1" == '' ]]; then
     echo "Usage: $0 <name of a cf service>"
 fi
 
@@ -17,7 +17,7 @@ endpoint=$(echo ${servicekey} | jq '.endpoint')
 endpoint=$(removeQuotes "$endpoint")
 
 username=$(echo ${servicekey} | jq '.username')
-if [ $username == 'null' ]; then    
+if [ "$username" == 'null' ]; then    
     username=$(echo ${servicekey} | jq '.user')
 fi
 username=$(removeQuotes "$username")
@@ -33,7 +33,7 @@ port=$(removeQuotes "$port")
 
 uri=$(echo ${servicekey} | jq '.uri')
 
-if [ $uri == 'null' ]; then    
+if [ "$uri" == 'null' ]; then    
     uri=$(echo ${servicekey} | jq '.url')
 fi
 
