@@ -8,6 +8,9 @@ export PATH=$HOME/.composer/vendor/bin:$PATH
 
 # add cf-utils to path
 export PATH=$PATH:$HOME/dotfiles/cf-utils
+
+# Add general-utils to path
+export PATH=$PATH:$HOME/dotfile/general-utils
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/schuberth/.oh-my-zsh"
 
