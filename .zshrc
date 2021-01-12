@@ -8,9 +8,14 @@ export PATH=$HOME/.composer/vendor/bin:$PATH
 
 # add cf-utils to path
 export PATH=$PATH:$HOME/dotfiles/cf-utils
+# add utils to path
+export PATH=$PATH:$HOME/utils
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/schuberth/.oh-my-zsh"
 
+# Android Dev Enironment
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -105,6 +110,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Cloud Foundry CLI
+alias cfa="cf a"
+alias cfs="cf s"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/schuberth/.sdkman"
