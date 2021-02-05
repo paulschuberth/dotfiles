@@ -16,6 +16,10 @@ export PATH=$PATH:$HOME/dotfile/general-utils
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/schuberth/.oh-my-zsh"
 
+# Add ssh keys to agent
+ssh-add -K ~/.ssh/devstack
+ssh-add -K ~/.ssh/github
+
 # Android Dev Enironment
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 # Set name of the theme to load --- if set to "random", it will
@@ -82,7 +86,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws git tmux zsh-completions mvn)
+plugins=(aws git tmux zsh-completions mvn zsh-vi-mode)
 
 
 source $ZSH/oh-my-zsh.sh
