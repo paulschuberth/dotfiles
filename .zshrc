@@ -80,7 +80,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws git tmux zsh-completions mvn)
+plugins=(aws git tmux zsh-completions mvn zsh-syntax-highlighting)
 
 
 source $ZSH/oh-my-zsh.sh
