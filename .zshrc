@@ -8,12 +8,20 @@ export PATH=$HOME/.composer/vendor/bin:$PATH
 
 # add cf-utils to path
 export PATH=$PATH:$HOME/dotfiles/cf-utils
+# add utils to path
+export PATH=$PATH:$HOME/utils
 
 # Add general-utils to path
 export PATH=$PATH:$HOME/dotfile/general-utils
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/schuberth/.oh-my-zsh"
 
+# Add ssh keys to agent
+ssh-add -K ~/.ssh/devstack
+ssh-add -K ~/.ssh/github
+
+# Android Dev Enironment
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -80,8 +88,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aws git tmux zsh-completions mvn zsh-syntax-highlighting)
-
+plugins=(aws git tmux zsh-completions mvn zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,6 +117,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Cloud Foundry CLI
+alias cfa="cf a"
+alias cfs="cf s"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/schuberth/.sdkman"
