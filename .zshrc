@@ -125,3 +125,4 @@ alias cfs="cf s"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/schuberth/.sdkman"
 [[ -s "/Users/schuberth/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/schuberth/.sdkman/bin/sdkman-init.sh"
+export PATH="/usr/local/sbin:$PATH"
