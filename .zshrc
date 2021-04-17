@@ -126,3 +126,5 @@ alias cfs="cf s"
 export SDKMAN_DIR="/Users/schuberth/.sdkman"
 [[ -s "/Users/schuberth/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/schuberth/.sdkman/bin/sdkman-init.sh"
 export PATH="/usr/local/sbin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

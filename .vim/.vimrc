@@ -61,6 +61,18 @@ set backupdir=~/.tmp//,/tmp//,.
 " Sudo
 cmap w!! w !sudo tee % >/dev/null
 
+"""""""""""""
+"  Plugins  "
+"""""""""""""
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+
+call plug#end()
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Shortcuts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -101,6 +113,5 @@ autocmd FileType tex nmap <buffer> <C-T> :!latexmk -pdf %<CR>
 autocmd FileType tex nmap <buffer> T :!open -a Skim %<.pdf %<.pdf<CR><CR>
 autocmd FileType tex nmap <buffer> C :!rubber --clean<CR>
 
-execute pathogen#infect()
 syntax on
 filetype plugin indent on
