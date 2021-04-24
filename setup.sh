@@ -3,7 +3,7 @@
 # load submodules
 git submodule update --init --recursive
 
-filesAndDirsToLink=".vim/ .vim/.vimrc alacritty.yml .tmux.conf .oh-my-zsh .zshrc karabiner.json"
+filesAndDirsToLink=".vim/ .vim/.vimrc alacritty.yml .tmux.conf .oh-my-zsh .zshrc karabiner.json .fzf.zsh config.fish"
 
 # Environment setup
 script_dir=$(pwd)
@@ -20,6 +20,10 @@ link_to_home() {
 
   if [[ $basename == "karabiner.json" ]]; then
       link="$HOME/.config/karabiner/karabiner.json"
+  fi
+
+  if [[ $basename == "config.fish" ]]; then
+      link="$HOME/.config/fish/config.fish"
   fi
 
   if [ -z "$1" ]; then
