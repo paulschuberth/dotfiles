@@ -198,31 +198,31 @@ draw_bold_text_with_bright_colors: true
 # Colors (One Dark)
 
 # Colors (New Moon)
-colors:
-  # Default colors
-  primary:
-    background: '#2D2D2D'
-    foreground: '#B3B9C5'
-  # Normal colors
-  normal:
-    black: '#2D2D2D'
-    red: '#F2777A'
-    green: '#92D192'
-    yellow: '#FFD479'
-    blue: '#6AB0F3'
-    magenta: '#E1A6F2'
-    cyan: '#76D4D6'
-    white: '#B3B9C5'
-  # Bright colors
-  bright:
-    black: '#777C85'
-    red: '#F2777A'
-    green: '#76D4D6'
-    yellow: '#FFEEA6'
-    blue: '#6AB0F3'
-    magenta: '#E1A6F2'
-    cyan: '#76D4D6'
-    white: '#FFFFFF'
+#colors:
+# # Default colors
+# primary:
+#   background: '#2D2D2D'
+#   foreground: '#B3B9C5'
+# # Normal colors
+# normal:
+#   black: '#2D2D2D'
+#   red: '#F2777A'
+#   green: '#92D192'
+#   yellow: '#FFD479'
+#   blue: '#6AB0F3'
+#   magenta: '#E1A6F2'
+#   cyan: '#76D4D6'
+#   white: '#B3B9C5'
+# # Bright colors
+# bright:
+#   black: '#777C85'
+#   red: '#F2777A'
+#   green: '#76D4D6'
+#   yellow: '#FFEEA6'
+#   blue: '#6AB0F3'
+#   magenta: '#E1A6F2'
+#   cyan: '#76D4D6'
+#   white: '#FFFFFF'
 
 # # Colors (Tangoish)
 # # Note: Orange is used in place of Cyan
@@ -301,9 +301,9 @@ live_config_reload: true
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 #shell:
-#  program: /bin/bash
+#  program: /usr/local/bin/fish
 #  args:
-#    - --login
+#   -  --login
 
 # Startup directory
 #
