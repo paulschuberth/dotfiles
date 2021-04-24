@@ -60,7 +60,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  startup_mode: Maximized
+  startup_mode: Windowed
 
   # Window title
   #title: Alacritty
@@ -160,98 +160,36 @@ font:
   #use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: false
 
-# # Snazzy
-# colors:
+# # Colors (Solarized)
+# Colors from https://ethanschoonover.com/solarized/
+colors:
+  primary:
+    background: '#fdf6e3'
+    foreground: '#073642'
 
-#   primary:
-#     background: '#282a36'
-#     foreground: '#eff0eb'
+  # Normal colors
+  normal:
+     black:   '#262626'
+     red:     '#dc322f'
+     green:   '#859900'
+     yellow:  '#b58900'
+     blue:    '#268bd2'
+     magenta: '#d33682'
+     cyan:    '#2aa198'
+     white:   '#e4e4e4'
 
-#   cursor:
-#     cursor: '#97979b'
-
-#   selection:
-#     text:       '#282a36'
-#     background: '#feffff'
-
-#   normal:
-#     black:   '#282a36'
-#     red:     '#ff5c57'
-#     green:   '#5af78e'
-#     yellow:  '#f3f99d'
-#     blue:    '#57c7ff'
-#     magenta: '#ff6ac1'
-#     cyan:    '#9aedfe'
-#     white:   '#f1f1f0'
-
-#   bright:
-#     black:   '#686868'
-#     red:     '#ff5c57'
-#     green:   '#5af78e'
-#     yellow:  '#f3f99d'
-#     blue:    '#57c7ff'
-#     magenta: '#ff6ac1'
-#     cyan:    '#9aedfe'
-#     white:   '#eff0eb'
-# Colors (One Dark)
-
-# Colors (New Moon)
-#colors:
-# # Default colors
-# primary:
-#   background: '#2D2D2D'
-#   foreground: '#B3B9C5'
-# # Normal colors
-# normal:
-#   black: '#2D2D2D'
-#   red: '#F2777A'
-#   green: '#92D192'
-#   yellow: '#FFD479'
-#   blue: '#6AB0F3'
-#   magenta: '#E1A6F2'
-#   cyan: '#76D4D6'
-#   white: '#B3B9C5'
-# # Bright colors
-# bright:
-#   black: '#777C85'
-#   red: '#F2777A'
-#   green: '#76D4D6'
-#   yellow: '#FFEEA6'
-#   blue: '#6AB0F3'
-#   magenta: '#E1A6F2'
-#   cyan: '#76D4D6'
-#   white: '#FFFFFF'
-
-# # Colors (Tangoish)
-# # Note: Orange is used in place of Cyan
-# colors:
-#   primary:
-#     background: '#2e3436'
-#     foreground: '#eeeeec'
-
-#   # Normal colors
-#   normal:
-#      black:   '#2e3436'
-#      red:     '#cc0000'
-#      green:   '#73d216'
-#      yellow:  '#edd400'
-#      blue:    '#3465a4'
-#      magenta: '#75507b'
-#      cyan:    '#f57900'
-#      white:   '#d3d7cf'
-
-#   # Bright colors
-#   bright:
-#      black:   '#2e3436'
-#      red:     '#ef2929'
-#      green:   '#8ae234'
-#      yellow:  '#fce94f'
-#      blue:    '#729fcf'
-#      magenta: '#ad7fa8'
-#      cyan:    '#fcaf3e'
-#      white:   '#eeeeec'
+  # Bright colors
+  bright:
+     black:   '#1c1c1c'
+     red:     '#d75f00'
+     green:   '#585858'
+     yellow:  '#626262'
+     blue:    '#808080'
+     magenta: '#5f5faf'
+     cyan:    '#8a8a8a'
+     white:   '#ffffd7'
 
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
