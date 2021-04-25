@@ -19,4 +19,5 @@ ln -sF ~/dotfiles/karabiner/ ~/.config/karabiner
 ln -sF ~/dotfiles/fish/ ~/.config/fish
 ln -sF ~/dotfiles/starship/starship.toml ~/.config/starship.toml
 ln -sF ~/dotfiles/.gitconfig ~/.gitconfig
-ln -sF ~/dotfiles/vim ~/.vim
+ln -sF ~/dotfiles/vim/ ~/.vim
+ln -sF ~/dotfiles/vim/vimrc ~/.vimrc
