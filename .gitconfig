@@ -1,6 +1,16 @@
 [user]
 	name = Paul Schuberth
 	email = mail@paulschuberth.de
-
 [core]
 	autocrlf = input
+    pager = delta
+
+[delta]
+    line-numbers = true
+    plus-style = "syntax #012800"
+    minus-style = "syntax #340001"
+    navigate = true
+    syntax-theme = Solarized (light)
+
+[interactive]
+        diffFilter = delta --color-only --light
