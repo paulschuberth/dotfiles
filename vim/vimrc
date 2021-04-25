@@ -68,9 +68,7 @@ cmap w!! w !sudo tee % >/dev/null
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 
-Plug 'lifepillar/vim-solarized8'
 
 call plug#end()
 
@@ -83,13 +81,13 @@ call plug#end()
 nnoremap <C-W> :w <CR>
 
 " Mapleader shortcuts
-let mapleader="§"
+let mapleader="'"
 
 " Create new split and switch to it.
-nnoremap <Leader>v <C-w>v<C-w>l
+nnoremap <Leader>w <C-w>v<C-w>l
 nnoremap <Leader>s <C-w>s<C-w>j
 " Close split
-nnoremap <Leader>w <C-w>c
+nnoremap <Leader>c <C-w>c
 
 " Easier movement in split windows.
 nnoremap <Leader>h <C-w>h
@@ -117,4 +115,3 @@ autocmd FileType tex nmap <buffer> C :!rubber --clean<CR>
 
 syntax on
 filetype plugin indent on
-
