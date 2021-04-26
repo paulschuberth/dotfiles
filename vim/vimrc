@@ -68,7 +68,7 @@ cmap w!! w !sudo tee % >/dev/null
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
