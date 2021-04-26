@@ -28,7 +28,7 @@ rm ~/.config/starship.toml
 ln -sF ~/dotfiles/starship/starship.toml ~/.config/starship.toml
 
 rm ~/.gitconfig
-ln -sF ~/dotfiles/.gitconfig ~/.gitconfig
+ln -sF ~/dotfiles/git/gitconfig ~/.gitconfig
 
 rm -rf ~/.vim
 ln -sF ~/dotfiles/vim/ ~/.vim

@@ -7,3 +7,5 @@ disabled=true
 [line_break]
 disabled=true
 
+[git_branch]
+truncation_length = 20

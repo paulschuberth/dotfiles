@@ -2,3 +2,5 @@
 .netrwhist
 fzf
 .DS_Store
+secret-config
+audi-config

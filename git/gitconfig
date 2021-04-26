@@ -12,3 +12,7 @@
 
 [interactive]
 	diffFilter = delta --color-only --light
+
+[includeIf "gitdir:~/Projekte/audi/"]
+    path = ~/dotfiles/git/secret-config
+
