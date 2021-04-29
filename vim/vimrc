@@ -20,6 +20,9 @@ set statusline+=%l/%L " Current line / total lines.
 " Search through subfolders
 set path+=**
 
+" reload files
+set autoread
+
 " Whitespace.
 " Spaces instead of tabs.
 set expandtab
