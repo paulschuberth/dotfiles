@@ -1,6 +1,12 @@
 set nocompatible
 set encoding=utf-8
-colorscheme desert
+set termguicolors
+
+" Set colors for Pmenu
+highlight Pmenu ctermbg=7 guibg=Grey 
+highlight PmenuSel cterm=bold,reverse
+highlight PmenuSbar ctermbg=0 guibg=Black
+highlight PmenuThumb ctermbg=0 guibg=Black
 
 " Visuals
 syntax on
@@ -72,6 +78,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'rust-lang/rust.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'altercation/solarized'
 
 call plug#end()
 

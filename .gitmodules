@@ -7,3 +7,9 @@
 [submodule "vim/plugged/fzf"]
 	path = vim/plugged/fzf
 	url = git@github.com:junegunn/fzf.git
+[submodule "vim/plugged/coc.nvim"]
+	path = vim/plugged/coc.nvim
+	url = git@github.com:neoclide/coc.nvim.git
+[submodule "vim/plugged/solarized"]
+	path = vim/plugged/solarized
+	url = git@github.com:altercation/solarized.git
