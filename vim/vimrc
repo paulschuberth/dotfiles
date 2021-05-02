@@ -1,6 +1,5 @@
 set nocompatible
 set encoding=utf-8
-set termguicolors
 
 " Set colors for Pmenu
 highlight Pmenu ctermbg=7 guibg=Grey 

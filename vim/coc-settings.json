@@ -1,9 +1,5 @@
 {
-    "coc": {
-       "preferences": {
-           "colorSupport": true
-       }
-    },
+    "coc.preferences.colorSupport": true,
     "languageserver": {
         "intelephense": {
             "command": "intelephense",
