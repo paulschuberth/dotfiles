@@ -79,6 +79,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'altercation/solarized'
+Plug 'iamcco/markdown-preview.nvim',  { 'do': 'cd app && yarn install' }
 
 call plug#end()
 
