@@ -92,7 +92,7 @@ call plug#end()
 nnoremap <C-W> :w <CR>
 
 " Mapleader shortcuts
-let mapleader="'"
+" let mapleader="'"
 
 " Create new split and switch to it.
 nnoremap <Leader>w <C-w>v<C-w>l
