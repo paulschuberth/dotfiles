@@ -4,3 +4,4 @@ fzf
 .DS_Store
 secret-config
 audi-config
+karabiner/automatic_backups/*
