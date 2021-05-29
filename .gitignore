@@ -5,3 +5,9 @@ fzf
 secret-config
 audi-config
 karabiner/automatic_backups/*
+vim/plugged/coc.nvim
+vim/plugged/fzf
+vim/plugged/markdown-preview.nvim
+vim/plugged/rust.vim
+vim/plugged/solarized
+vim/plugged/vim-surround
