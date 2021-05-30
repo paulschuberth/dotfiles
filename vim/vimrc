@@ -84,6 +84,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'altercation/solarized'
 Plug 'iamcco/markdown-preview.nvim',  { 'do': 'cd app && yarn install' }
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
