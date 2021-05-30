@@ -11,3 +11,4 @@ vim/plugged/markdown-preview.nvim
 vim/plugged/rust.vim
 vim/plugged/solarized
 vim/plugged/vim-surround
+vim/plugged/vim-commentary
