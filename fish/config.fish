@@ -18,3 +18,5 @@ set NVM_DIR "$HOME/.nvm"
 ssh-add -K ~/.ssh/devstack &> /dev/null
 ssh-add -K ~/.ssh/github &> /dev/null
 ssh-add -K ~/.ssh/github2 &> /dev/null
+
+tmux attach || tmux
