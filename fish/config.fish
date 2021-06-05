@@ -19,4 +19,6 @@ ssh-add -K ~/.ssh/devstack &> /dev/null
 ssh-add -K ~/.ssh/github &> /dev/null
 ssh-add -K ~/.ssh/github2 &> /dev/null
 
-tmux attach || tmux
+if set -q TMUX != 0
+    tmux attach || tmux
+end
