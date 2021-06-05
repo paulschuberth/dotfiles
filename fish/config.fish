@@ -5,6 +5,7 @@ set EDITOR vim
 fish_add_path /Users/schuberth/bin
 fish_add_path /Users/schuberth/.sdkman/bin
 fish_add_path /Users/schuberth/.cargo/bin
+fish_add_path /Users/schuberth/Library/Python/3.9/bin
 
 set fish_greeting
 
