@@ -16,18 +16,18 @@
                 },
                 "rules": [
                     {
-                        "description": "Double tap left_option to invoke left_command + spacebar",
+                        "description": "Double tap home to open Alacritty",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "left_option pressed",
+                                        "name": "home pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "left_option",
+                                    "key_code": "home",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -43,7 +43,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "left_option",
+                                    "key_code": "home",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -53,19 +53,19 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "left_option pressed",
+                                            "name": "home pressed",
                                             "value": 1
                                         }
                                     },
                                     {
-                                        "key_code": "left_option"
+                                        "key_code": "home"
                                     }
                                 ],
                                 "to_delayed_action": {
                                     "to_if_canceled": [
                                         {
                                             "set_variable": {
-                                                "name": "left_option pressed",
+                                                "name": "home pressed",
                                                 "value": 0
                                             }
                                         }
@@ -73,7 +73,7 @@
                                     "to_if_invoked": [
                                         {
                                             "set_variable": {
-                                                "name": "left_option pressed",
+                                                "name": "home pressed",
                                                 "value": 0
                                             }
                                         }
@@ -151,7 +151,18 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
-                    "simple_modifications": []
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "page_up"
+                            },
+                            "to": [
+                                {
+                                    "key_code": "right_option"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
             "fn_function_keys": [
