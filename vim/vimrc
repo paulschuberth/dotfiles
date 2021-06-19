@@ -88,29 +88,6 @@ Plug 'tpope/vim-commentary'
 
 call plug#end()
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Shortcuts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Saving shortcut
-nnoremap <C-W> :w <CR>
-
-" Mapleader shortcuts
-" let mapleader="'"
-
-" Create new split and switch to it.
-nnoremap <Leader>w <C-w>v<C-w>l
-nnoremap <Leader>s <C-w>s<C-w>j
-" Close split
-nnoremap <Leader>c <C-w>c
-
-" Easier movement in split windows.
-nnoremap <Leader>h <C-w>h
-nnoremap <Leader>j <C-w>j
-nnoremap <Leader>k <C-w>k
-nnoremap <Leader>l <C-w>l
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Filetype specific
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
