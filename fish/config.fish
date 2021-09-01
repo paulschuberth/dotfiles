@@ -23,7 +23,7 @@ ssh-add -K ~/.ssh/github2 &> /dev/null
 if status is-interactive
     if not set -q TMUX
         # attempt to attach to tmux session
-        tmux attach || tmux
+        tmux attach -t main || tmux new -s main
     end
 end
 

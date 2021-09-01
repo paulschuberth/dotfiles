@@ -10,14 +10,6 @@ noremap <Down> <Nop>
 noremap <Right> <Nop>
 noremap <Left> <Nop>
 
-" Set colors for Pmenu
-highlight Pmenu ctermbg=7 guibg=Grey 
-highlight PmenuSel cterm=bold,reverse
-highlight PmenuSbar ctermbg=0 guibg=Black
-highlight PmenuThumb ctermbg=0 guibg=Black
-
-" Visuals
-syntax on
 " set nonumber
 set number relativenumber
 set nowrap
@@ -93,8 +85,52 @@ Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim',  { 'do': 'cd app && yarn install' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'gruvbox-community/gruvbox'
+Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
+
+" Visuals
+syntax on
+" set termguicolors
+let g:gruvbox_contrast_dark = "hard"
+let g:gruvbox_contrast_light = "hard"
+
+set t_Co=16
+" changebackground changes the background mode based on macos's `appearance`
+" setting. we also refresh the statusline colors to reflect the new mode.
+function! ChangeBackground()
+  if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
+    set background=dark   " for dark version of theme
+  else
+    set background=light  " for light version of theme
+  endif
+  colorscheme gruvbox
+
+  try
+    execute "AirlineRefresh"
+  catch
+  endtry
+endfunction
+
+" initialize the colorscheme
+call ChangeBackground()
+
+" status line
+
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'win'  : '#I #W',
+      \'cwin' : '#I #W',
+      \'x'    : '%a',
+      \'y'    : '%Y-%m-%d %H:%M',
+      \'z'    : ' #h',
+      \'options' : {'status-justify' : 'left', 'status-position' : 'top'}}
+
+let g:tmuxline_powerline_separators = 0
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Filetype specific
@@ -114,5 +150,28 @@ autocmd FileType tex nmap <buffer> <C-T> :!latexmk -pdf %<CR>
 autocmd FileType tex nmap <buffer> T :!open -a Skim %<.pdf %<.pdf<CR><CR>
 autocmd FileType tex nmap <buffer> C :!rubber --clean<CR>
 
-syntax on
-filetype plugin indent on
+" ==================== FZF ====================
+let g:fzf_command_prefix = 'Fzf'
+let g:fzf_layout = { 'down': '~20%' }
+
+" search 
+nmap <C-p> :FzfHistory<cr>
+imap <C-p> <esc>:<C-u>FzfHistory<cr>
+
+" search across files in the current directory
+nmap <C-b> :FzfFiles<cr>
+imap <C-b> <esc>:<C-u>FzfFiles<cr>
+
+let g:rg_command = '
+  \ rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always"
+  \ -g "*.{js,json,php,md,styl,jade,html,config,py,cpp,c,go,hs,rb,conf}"
+  \ -g "!{.git,node_modules,vendor}/*" '
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)

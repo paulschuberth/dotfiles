@@ -38,4 +38,8 @@ ln -sF ~/dotfiles/vim/vimrc ~/.vimrc
 rm ~/.ideavimrc
 ln -sF ~/dotfiles/vim/vimrc ~/.ideavimrc
 
+ln -sF ~/dotfiles/io.arslan.dark-mode-notify.plist ~/Library/LaunchAgents/io.arslan.dark-mode-notify.plist
 
+cd utils/
+swiftc notify.swift -o notify
+cp notify /usr/local/bin/dark-mode-notify

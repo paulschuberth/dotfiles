@@ -1,3 +1,5 @@
+import:
+  - "/Users/schuberth/dotfiles/alacritty/color.yml"
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
 # Any items in the `env` entry below will be added as
@@ -10,7 +12,7 @@
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
+  # TERM: alacritty
 
 window:
   # Window dimensions (changes require restart)
@@ -162,35 +164,6 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: false
 
-# # Colors (Solarized)
-# Colors from https://ethanschoonover.com/solarized/
-colors:
-  primary:
-    background: '#fdf6e3'
-    foreground: '#073642'
-
-  # Normal colors
-  normal:
-     black:   '#262626'
-     red:     '#dc322f'
-     green:   '#859900'
-     yellow:  '#b58900'
-     blue:    '#268bd2'
-     magenta: '#d33682'
-     cyan:    '#2aa198'
-     white:   '#e4e4e4'
-
-  # Bright colors
-  bright:
-     black:   '#1c1c1c'
-     red:     '#d75f00'
-     green:   '#585858'
-     yellow:  '#626262'
-     blue:    '#808080'
-     magenta: '#5f5faf'
-     cyan:    '#8a8a8a'
-     white:   '#ffffd7'
-
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
 #background_opacity: 1.0
@@ -199,7 +172,7 @@ selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
-  save_to_clipboard: false
+  save_to_clipboard: true
 
 #cursor:
   # Cursor style
@@ -242,7 +215,7 @@ shell:
   program: /usr/local/bin/fish
   args:
    -  --login
-     #   - "tmux attach || tmux"
+
 # Startup directory
 #
 # Directory the shell is started in. If this is unset, or `None`, the working
@@ -262,19 +235,19 @@ shell:
 # Send ESC (\x1b) before characters when alt is pressed.
 #alt_send_esc: true
 
-#mouse:
+mouse:
   # Click settings
   #
   # The `double_click` and `triple_click` settings control the time
   # alacritty should wait for accepting multiple clicks as one double
   # or triple click.
-  #double_click: { threshold: 300 }
-  #triple_click: { threshold: 300 }
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
 
   # If this is `true`, the cursor is temporarily hidden when typing.
-  #hide_when_typing: false
+  hide_when_typing: false
 
-  #url:
+  url:
     # URL launcher
     #
     # This program is executed when clicking on a text which is recognized as a URL.
@@ -286,8 +259,8 @@ shell:
     #   - (macOS) open
     #   - (Linux/BSD) xdg-open
     #   - (Windows) explorer
-    #launcher:
-    #  program: xdg-open
+    launcher:
+      program: open
     #  args: []
 
     # URL modifiers
