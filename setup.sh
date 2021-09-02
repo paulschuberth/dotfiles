@@ -38,8 +38,8 @@ ln -sF ~/dotfiles/vim/vimrc ~/.vimrc
 rm ~/.ideavimrc
 ln -sF ~/dotfiles/vim/vimrc ~/.ideavimrc
 
-ln -sF ~/dotfiles/io.arslan.dark-mode-notify.plist ~/Library/LaunchAgents/io.arslan.dark-mode-notify.plist
-
-cd utils/
-swiftc notify.swift -o notify
-cp notify /usr/local/bin/dark-mode-notify
+swiftc ./utils/notify.swift -o /usr/local/bin/dark-mode-notify
+user=$(id -u)
+launchctl bootout gui/$user io.arslan.dark-mode-notify.plist
+launchctl bootstrap gui/$user io.arslan.dark-mode-notify.plist
+launchctl kickstart -k -p gui/$user/io.arslan.dark-mode-notify
