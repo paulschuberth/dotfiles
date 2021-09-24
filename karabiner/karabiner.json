@@ -16,6 +16,59 @@
                 },
                 "rules": [
                     {
+                        "description": "Use additional mouse buttons to navigate back and forth.",
+                        "manipulators": [
+                            {
+
+                                "type": "basic",
+                                "from": {
+                                    "pointing_button": "button4"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers" : [
+                                            "^com.apple.Safari",
+                                            "^com.apple.finder"
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+
+                                "type": "basic",
+                                "from": {
+                                    "pointing_button": "button5"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers" : [
+                                            "^com.apple.Safari",
+                                            "^com.apple.finder"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "description": "Double tap home to open Alacritty",
                         "manipulators": [
                             {
