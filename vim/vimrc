@@ -1,3 +1,7 @@
+" make sure vim is using a POSIX compatible shell instead of fish
+if &shell =~# 'fish$'
+    set shell=sh
+endif
 set nocompatible
 set encoding=utf-8
 
@@ -89,6 +93,7 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'edkolev/tmuxline.vim'
+Plug 'dag/vim-fish'
 
 call plug#end()
 
