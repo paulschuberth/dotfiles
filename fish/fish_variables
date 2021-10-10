@@ -30,11 +30,11 @@ SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrbl
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
-SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_key_bindings:fish_vi_key_bindings
 SETUVAR fish_pager_color_completion:green
 SETUVAR fish_pager_color_description:B3A06D
 SETUVAR fish_pager_color_prefix:cyan\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/Users/schuberth/\x2ecomposer/vendor/bin\x1e/Users/schuberth/Library/Python/3\x2e9/bin\x1e/Users/schuberth/bin\x1e/Users/schuberth/\x2ecargo/bin\x1e/Users/schuberth/\x2esdkman/bin
+SETUVAR fish_user_paths:/Users/schuberth/go/bin\x1e/Users/schuberth/\x2ecomposer/vendor/bin\x1e/Users/schuberth/Library/Python/3\x2e9/bin\x1e/Users/schuberth/bin\x1e/Users/schuberth/\x2ecargo/bin\x1e/Users/schuberth/\x2esdkman/bin
 SETUVAR nvm_data:/Users/schuberth/\x2elocal/share/nvm
 SETUVAR nvm_mirror:https\x3a//nodejs\x2eorg/dist
