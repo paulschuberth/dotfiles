@@ -4,11 +4,14 @@ set EDITOR vim
 
 fish_add_path /Users/schuberth/bin
 fish_add_path /Users/schuberth/.sdkman/bin
+fish_add_path /Users/schuberth/go/bin
 fish_add_path /Users/schuberth/.cargo/bin
 fish_add_path /Users/schuberth/Library/Python/3.9/bin
 fish_add_path /Users/schuberth/.composer/vendor/bin
 
 set fish_greeting
+set GOPATH -x /Users/schuberth/code
+set GOBIN -x /Users/schuberth/go/bin
 
 starship init fish | source
 
@@ -29,3 +32,7 @@ end
 
 fish_add_path /usr/local/opt/mysql@5.6/bin
 fish_add_path /usr/local/sbin
+
+# Aliases
+alias vim="nvim"
+alias vi="nvim"

@@ -4,7 +4,9 @@
 git submodule update --init --recursive
 
 # load vim.plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 
 # Environment setup
 script_dir=$(pwd)
@@ -30,12 +32,9 @@ ln -sF ~/dotfiles/starship/starship.toml ~/.config/starship.toml
 rm ~/.gitconfig
 ln -sF ~/dotfiles/git/gitconfig ~/.gitconfig
 
-rm -rf ~/.vim
-ln -sF ~/dotfiles/vim/ ~/.vim
-
-rm ~/.vimrc
-ln -sF ~/dotfiles/vim/vimrc ~/.vimrc
+rm ~/.config/nvim/init.vim
+ln -sF ~/dotfiles/neovim/init.vim ~/.config/nvim/init.vim
 rm ~/.ideavimrc
-ln -sF ~/dotfiles/vim/vimrc ~/.ideavimrc
+ln -sF ~/dotfiles/neovim/init.vim ~/.ideavimrc
 
 ./dark-mode-setup.sh

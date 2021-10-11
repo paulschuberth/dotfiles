@@ -6,3 +6,4 @@ secret-config
 audi-config
 karabiner/automatic_backups/*
 vim/plugged/**
+neovim/plugged/**
