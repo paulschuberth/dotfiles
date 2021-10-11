@@ -1,4 +1,3 @@
-
 "set runtimepath^=~/.vim runtimepath+=~/.vim/after
 "let &packpath = &runtimepath
 "source ~/.vimrc
@@ -76,6 +75,7 @@ cmap w!! w !sudo tee % >/dev/null
 call plug#begin('/Users/schuberth/dotfiles/neovim/plugged')
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'altercation/solarized'
