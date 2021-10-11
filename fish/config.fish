@@ -27,3 +27,5 @@ if status is-interactive
     end
 end
 
+fish_add_path /usr/local/opt/mysql@5.6/bin
+fish_add_path /usr/local/sbin
