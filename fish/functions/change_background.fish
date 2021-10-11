@@ -47,4 +47,13 @@ function change_background --argument mode_setting
     case light
       alacritty-theme gruvbox_light
   end
+
+  # change bat theme
+  switch $mode
+    case dark
+      sed -i .backup 's/gruvbox-light/gruvbox-dark/g' ~/.config/bat/config
+    case light
+      sed -i .backup 's/gruvbox-dark/gruvbox-light/g' ~/.config/bat/config
+  end
+  rm ~/.config/bat/config.backup
 end
