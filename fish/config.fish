@@ -36,3 +36,4 @@ fish_add_path /usr/local/sbin
 # Aliases
 alias vim="nvim"
 alias vi="nvim"
+alias python="python3"

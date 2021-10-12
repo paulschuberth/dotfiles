@@ -21,3 +21,6 @@ disabled=true
 
 [swift]
 disabled=true
+
+[python]
+python_binary=["python3"]
