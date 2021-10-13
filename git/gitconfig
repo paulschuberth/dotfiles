@@ -8,7 +8,6 @@
 [delta]
 	features = side-by-side line-numbers decorations
 	navigate = true
-	syntax-theme = Solarized (light)
 
 [interactive]
 	diffFilter = delta --color-only --light
