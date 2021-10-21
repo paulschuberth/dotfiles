@@ -1,0 +1,1 @@
+cf t | tail -2 | tr '\n' ' ' | tr -s ' ' |  cut -d" " -f2,4
