@@ -23,7 +23,8 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com.apple.Safari",
-                                            "^com.apple.finder"
+                                            "^com.apple.finder",
+                                            "^com.apple.dt.Xcode"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -46,7 +47,8 @@
                                     {
                                         "bundle_identifiers": [
                                             "^com.apple.Safari",
-                                            "^com.apple.finder"
+                                            "^com.apple.finder",
+                                            "^com.apple.dt.Xcode"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -175,30 +177,6 @@
                                     {
                                         "key_code": "grave_accent_and_tilde",
                                         "modifiers": []
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Command + Esc to Command + Tilda",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "escape",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": [
-                                            "command"
-                                        ]
                                     }
                                 ],
                                 "type": "basic"
