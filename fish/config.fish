@@ -19,10 +19,6 @@ set NVM_DIR "$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-ssh-add -K ~/.ssh/devstack &> /dev/null
-ssh-add -K ~/.ssh/github &> /dev/null
-ssh-add -K ~/.ssh/github2 &> /dev/null
-
 if status is-interactive
     if not set -q TMUX
         # attempt to attach to tmux session
@@ -38,3 +34,11 @@ alias vim="nvim"
 alias vi="nvim"
 alias python="python3"
 alias branch="/Users/schuberth/code/audi/acpp-branch-automation/branch.py"
+
+if test -e ~/dotfiles/fish/aliases.fish
+    source ~/dotfiles/fish/aliases.fish
+end
+
+if test -e ~/dotfiles/fish/ssh.fish
+    source ~/dotfiles/fish/ssh.fish
+end

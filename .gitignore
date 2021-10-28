@@ -7,3 +7,5 @@ audi-config
 karabiner/automatic_backups/*
 vim/plugged/**
 neovim/plugged/**
+fish/aliases.fish
+fish/ssh.fish
