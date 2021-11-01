@@ -39,6 +39,7 @@ if test -e ~/dotfiles/fish/aliases.fish
     source ~/dotfiles/fish/aliases.fish
 end
 
-if test -e ~/dotfiles/fish/ssh.fish
-    source ~/dotfiles/fish/ssh.fish
+if test -e ~/dotfiles/fish/local.fish
+    source ~/dotfiles/fish/local.fish
 end
+
