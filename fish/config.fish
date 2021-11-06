@@ -15,7 +15,9 @@ set fish_greeting
 set GOPATH -x /Users/schuberth/code
 set GOBIN -x /Users/schuberth/go/bin
 
-starship init fish | source
+if type -q starship
+	starship init fish | source
+end
 
 set NVM_DIR "$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
