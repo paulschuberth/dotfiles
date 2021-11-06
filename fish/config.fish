@@ -1,4 +1,6 @@
 
+change_background &> /dev/null
+
 set PATH "$PATH:/Users/schuberth/bin:/Users/schuberth/.sdkman/bin"
 set EDITOR vim
 
