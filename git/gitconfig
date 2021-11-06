@@ -1,6 +1,7 @@
 [core]
 	autocrlf = input
 	pager = delta
+	precomposeUnicode = true
 
 [delta]
 	features = side-by-side line-numbers decorations
@@ -14,3 +15,6 @@
 
 [pull]
 	rebase = false
+[user]
+	name = Paul Schuberth
+	email = mail@paulschuberth.de
