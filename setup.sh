@@ -14,15 +14,6 @@ script_dir=$(pwd)
 rm ~/.config/bat
 ln -sF ~/dotfiles/bat/ ~/.config/bat
 
-rm ~/.config/alacritty
-ln -sF ~/dotfiles/alacritty/ ~/.config/alacritty
-
-rm -rf ~/.tmux.conf
-ln -sF ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
-
-rm ~/.config/karabiner
-ln -sF ~/dotfiles/karabiner/ ~/.config/karabiner
-
 rm ~/.config/fish
 ln -sF ~/dotfiles/fish/ ~/.config/fish
 
@@ -37,4 +28,16 @@ ln -sF ~/dotfiles/neovim/init.vim ~/.config/nvim/init.vim
 rm ~/.ideavimrc
 ln -sF ~/dotfiles/neovim/init.vim ~/.ideavimrc
 
-./dark-mode-setup.sh
+if [ `uname -s` = 'Darwin' ]; then
+	./dark-mode-setup.sh
+
+	rm ~/.config/karabiner
+	ln -sF ~/dotfiles/karabiner/ ~/.config/karabiner
+
+	rm -rf ~/.tmux.conf
+	ln -sF ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+
+	rm ~/.config/alacritty
+	ln -sF ~/dotfiles/alacritty/ ~/.config/alacritty
+
+fi
