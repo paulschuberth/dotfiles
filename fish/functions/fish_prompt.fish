@@ -32,7 +32,7 @@ function fish_prompt
         end
 
         function _is_hg_repo
-            fish_print_hg_root >/dev/null
+            fish_print_hg_root &>/dev/null
         end
 
         function _repo_branch_name
