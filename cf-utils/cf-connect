@@ -1,8 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 if [[ "$1" == '' ]]; then
     echo "Usage: $0 <name of a cf service>"
 fi
+
+dbservice=$1
 
 removeQuotes() {
     input=$1
@@ -79,18 +81,22 @@ do
     esac
 done
 
+# rename window to the current db service
+tmux rename-window "$dbservice"
+
 if $isMysql ; then
     mysql_creds_file=/tmp/cf-connect-creds-$name
     touch $mysql_creds_file
     chmod 600 $mysql_creds_file
     echo "[client]" > $mysql_creds_file
-    echo "user=$username" >> $mysql_creds_file 
-    echo "password=$password" >> $mysql_creds_file 
-    
-    echo mysql --defaults-extra-file="$mysql_creds_file" -h 127.0.0.1 -D "$name" -P "$localport" -u "$username" | pbcopy
-    
-    cf ssh $target -L $localport:$endpoint:$port
-    
+    echo "user=$username" >> $mysql_creds_file
+    echo "password=$password" >> $mysql_creds_file
+
+    connectionCommand="mysql --defaults-extra-file=$mysql_creds_file -h 127.0.0.1 -D $name -P $localport -u $username"
+
+    tmux split-window -p 90 'sleep 1; '"$connectionCommand"''
+    cf ssh $target -L "$localport":"$endpoint":"$port"
+
     # remove creds file after closing connection
     rm $mysql_creds_file
 fi
@@ -99,9 +105,11 @@ if $isMongo ; then
     rdsCAFile=/tmp/rds-combined-ca-bundle.pem
     if [[ ! -f "$rdsCAFile" ]]; then
         touch $rdsCAFile
-        curl -o $rdsCAFile https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem 
+        curl -o $rdsCAFile https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
     fi
 
-    echo "mongo mongodb://$username:$password@127.0.0.1:$localport --ssl --sslAllowInvalidHostnames --sslCAFile $rdsCAFile" | pbcopy
-    cf ssh $target -L $localport:$endpoint:$port
+    connectionCommand="mongo mongodb://$username:$password@127.0.0.1:$localport --tls --tlsAllowInvalidHostnames --tlsCAFile $rdsCAFile"
+    tmux split-window -p 90 'sleep 1; '"$connectionCommand"''
+
+    cf ssh $target -L "$localport":"$endpoint":"$port"
 fi
