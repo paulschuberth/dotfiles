@@ -37,7 +37,6 @@ fish_add_path /usr/local/sbin
 alias vim="nvim"
 alias vi="nvim"
 alias python="python3"
-alias branch="/Users/schuberth/code/audi/acpp-branch-automation/branch.py"
 
 if test -e ~/dotfiles/fish/aliases.fish
     source ~/dotfiles/fish/aliases.fish
