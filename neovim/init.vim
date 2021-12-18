@@ -19,6 +19,10 @@ noremap <Down> <Nop>
 noremap <Right> <Nop>
 noremap <Left> <Nop>
 
+" Split below or to the right of the current buffer
+set splitbelow
+set splitright
+
 " set nonumber
 set number relativenumber
 set nowrap
