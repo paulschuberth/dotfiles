@@ -1,8 +1,3 @@
-"set runtimepath^=~/.vim runtimepath+=~/.vim/after
-"let &packpath = &runtimepath
-"source ~/.vimrc
-"
-
 " make sure vim is using a POSIX compatible shell instead of fish
 if &shell =~# 'fish$'
     set shell=sh
@@ -81,9 +76,6 @@ call plug#begin('/Users/schuberth/dotfiles/neovim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
-Plug 'altercation/solarized'
-Plug 'plasticboy/vim-markdown'
-Plug 'iamcco/markdown-preview.nvim',  { 'do': 'cd app && yarn install' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'gruvbox-community/gruvbox'
@@ -94,47 +86,12 @@ Plug 'dag/vim-fish'
 Plug 'fatih/vim-go'
 Plug 'airblade/vim-gitgutter'
 Plug 'neovim/nvim-lspconfig'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
 " Visuals
 syntax on
-" set termguicolors
-let g:gruvbox_contrast_dark = "hard"
-let g:gruvbox_contrast_light = "hard"
-
-set t_Co=16
-" changebackground changes the background mode based on macos's `appearance`
-" setting. we also refresh the statusline colors to reflect the new mode.
-function! ChangeBackground()
-  if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-    set background=dark   " for dark version of theme
-  else
-    set background=light  " for light version of theme
-  endif
-  colorscheme gruvbox
-
-  try
-    execute "AirlineRefresh"
-  catch
-  endtry
-endfunction
-
-" initialize the colorscheme
-call ChangeBackground()
-
-" status line
-
-let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'win'  : '#I #W',
-      \'cwin' : '#I #W',
-      \'x'    : '%a',
-      \'y'    : '%Y-%m-%d %H:%M',
-      \'z'    : ' #h',
-      \'options' : {'status-justify' : 'left', 'status-position' : 'top'}}
-
-let g:tmuxline_powerline_separators = 0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

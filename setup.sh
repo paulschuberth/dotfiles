@@ -46,4 +46,7 @@ if [[ $(uname -s) == Darwin ]]; then
     rm -rf ~/.config/alacritty &> /dev/null
     ln -sF ~/dotfiles/alacritty/ ~/.config/alacritty
 
+    # Link the base16 colors into the alacritty color directory
+    ln -sF ~/dotfiles/themes/base16-alacritty/colors/ ~/.config/alacritty
+
 fi

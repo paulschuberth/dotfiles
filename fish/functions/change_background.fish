@@ -19,6 +19,14 @@ function change_background --argument mode_setting
     end
   end
 
+  # change alacritty
+  switch $mode
+    case dark
+      alacritty-colorscheme apply $ALACRITTY_THEME_DARK
+    case light
+      alacritty-colorscheme apply $ALACRITTY_THEME_LIGHT
+  end
+
   # well, seems like there is no proper way to send a command to 
   # Vim as a client. Luckily we're using tmux, which means we can 
   # iterate over all vim sessions and change the background ourself.
@@ -27,35 +35,11 @@ function change_background --argument mode_setting
   for wix in (/usr/local/bin/tmux list-windows -t main -F 'main:#{window_index}')
     for pix in (/usr/local/bin/tmux list-panes -F 'main:#{window_index}.#{pane_index}' -t $wix)
       set -l is_vim "ps -o state= -o comm= -t '#{pane_tty}'  | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?\$'"
-      /usr/local/bin/tmux if-shell -t "$pix" "$is_vim" "send-keys -t $pix escape ENTER"
-      /usr/local/bin/tmux if-shell -t "$pix" "$is_vim" "send-keys -t $pix ':call ChangeBackground()' ENTER"
+      #/usr/local/bin/tmux if-shell -t "$pix" "$is_vim" "send-keys -t $pix escape ENTER"
+      #/usr/local/bin/tmux if-shell -t "$pix" "$is_vim" "send-keys -t $pix ':call ChangeBackground()' ENTER"
+      /usr/local/bin/tmux if-shell -t "$pix" "$is_vim" "send-keys -t $pix ':source ~/dotfiles/neovim/init.vim' ENTER"
     end
   end
 
-  # change tmux
-  switch $mode
-    case dark
-      tmux source-file ~/dotfiles/tmux/tmux-dark.conf
-    case light
-      tmux source-file ~/dotfiles/tmux/tmux-light.conf
-  end
 
-  # change alacritty
-  switch $mode
-    case dark
-      alacritty-theme gruvbox_dark
-    case light
-      alacritty-theme gruvbox_light
-  end
-
-  # change bat theme
-  switch $mode
-    case dark
-      sed -i .backup 's/gruvbox-light/gruvbox-dark/g' ~/.config/bat/config
-      set -gx BAT_THEME "gruvbox-dark"
-    case light
-      sed -i .backup 's/gruvbox-dark/gruvbox-light/g' ~/.config/bat/config
-      set -gx BAT_THEME "gruvbox-light"
-  end
-  rm ~/.config/bat/config.backup
 end
