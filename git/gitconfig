@@ -1,3 +1,2 @@
-[user]
-	email = mail@paulschuberth.de
-	name = Paul Schuberth
+[include]
+    path = ~/.gitconfig_local
