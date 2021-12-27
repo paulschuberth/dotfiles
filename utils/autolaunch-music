@@ -1,0 +1,12 @@
+#!/bin/sh
+
+input=$1
+
+if [ $input = 'true' ]; then
+    launchctl load -w /System/Library/LaunchAgents/com.apple.rcd.plist
+    echo "Enabling autolaunch of Music"
+else
+    launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
+    echo "Disabling autolaunch of Music"
+fi
+
