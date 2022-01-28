@@ -2,11 +2,11 @@
 # VERSION: 3.0
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_l:ls\x20\x2dl
-SETUVAR _fisher_PatrickF1_2F_fzf_2E_fish_files:/Users/schuberth/\x2econfig/fish/functions/__fzf_extract_var_info\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/__fzf_preview_file\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/__fzf_report_file_type\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/__fzf_search_current_dir\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/__fzf_search_git_log\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/__fzf_search_git_status\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/__fzf_search_history\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/__fzf_search_shell_variables\x2efish\x1e/Users/schuberth/\x2econfig/fish/conf\x2ed/fzf\x2efish
+SETUVAR _fisher_PatrickF1_2F_fzf_2E_fish_files:/Users/schuberth/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e/Users/schuberth/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e/Users/schuberth/\x2econfig/fish/completions/fzf_configure_bindings\x2efish
 SETUVAR _fisher_evanlucas_2F_fish_2D_kubectl_2D_completions_files:/Users/schuberth/\x2econfig/fish/completions/kubectl\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/Users/schuberth/\x2econfig/fish/functions/fisher\x2efish\x1e/Users/schuberth/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_jorgebucaran_2F_nvm_2E_fish_files:/Users/schuberth/\x2econfig/fish/functions/_nvm_index_update\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_nvm_list\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_nvm_version_activate\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_nvm_version_deactivate\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/nvm\x2efish\x1e/Users/schuberth/\x2econfig/fish/conf\x2ed/nvm\x2efish\x1e/Users/schuberth/\x2econfig/fish/completions/nvm\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ePatrickF1/fzf\x2efish\x1ejorgebucaran/nvm\x2efish\x1ereitzig/sdkman\x2dfor\x2dfish\x40v1\x2e4\x2e0\x1eevanlucas/fish\x2dkubectl\x2dcompletions
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ereitzig/sdkman\x2dfor\x2dfish\x40v1\x2e4\x2e0\x1ejorgebucaran/nvm\x2efish\x1eevanlucas/fish\x2dkubectl\x2dcompletions\x1ePatrickF1/fzf\x2efish
 SETUVAR _fisher_reitzig_2F_sdkman_2D_for_2D_fish_40_v1_2E_34_2E_30__files:/Users/schuberth/\x2econfig/fish/functions/sdk\x2efish\x1e/Users/schuberth/\x2econfig/fish/conf\x2ed/sdk\x2efish\x1e/Users/schuberth/\x2econfig/fish/completions/sdk\x2efish
 SETUVAR fish_color_autosuggestion:657b83
 SETUVAR fish_color_cancel:\x2dr
@@ -36,6 +36,6 @@ SETUVAR fish_pager_color_completion:green
 SETUVAR fish_pager_color_description:B3A06D
 SETUVAR fish_pager_color_prefix:cyan\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/usr/local/sbin\x1e/Users/schuberth/go/bin\x1e/Users/schuberth/\x2ecomposer/vendor/bin\x1e/Users/schuberth/Library/Python/3\x2e9/bin\x1e/Users/schuberth/bin\x1e/Users/schuberth/\x2ecargo/bin\x1e/Users/schuberth/\x2esdkman/bin\x1e/usr/local/opt/fzf/bin
+SETUVAR fish_user_paths:/opt/homebrew/sbin\x1e/opt/homebrew/opt/python\x403\x2e10/bin\x1e\x28brew\x20\x2d\x2dprefix\x29/sbin\x1e/Users/schuberth/go/bin\x1e/Users/schuberth/\x2ecomposer/vendor/bin\x1e/Users/schuberth/Library/Python/3\x2e9/bin\x1e/Users/schuberth/bin\x1e/Users/schuberth/\x2ecargo/bin\x1e/Users/schuberth/\x2esdkman/bin\x1e\x28brew\x20\x2d\x2dprefix\x29/opt/fzf/bin
 SETUVAR nvm_data:/Users/schuberth/\x2elocal/share/nvm
 SETUVAR nvm_mirror:https\x3a//nodejs\x2eorg/dist

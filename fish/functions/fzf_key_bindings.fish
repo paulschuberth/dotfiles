@@ -1,1 +1,1 @@
-/usr/local/opt/fzf/shell/key-bindings.fish
+/Users/schuberth/dotfiles/neovim/plugged/fzf/shell/key-bindings.fish
