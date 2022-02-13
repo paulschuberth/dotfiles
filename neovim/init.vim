@@ -67,6 +67,13 @@ set showmatch
 " Sudo
 cmap w!! w !sudo tee % >/dev/null
 
+
+" Markdown
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.md setlocal textwidth=120
+autocmd BufRead,BufNewFile *.md setlocal fo=want
+autocmd FileType markdown set nocindent
+
 """""""""""""
 "  Plugins  "
 """""""""""""
