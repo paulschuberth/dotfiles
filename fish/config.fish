@@ -10,6 +10,8 @@ fish_add_path /Users/schuberth/go/bin
 fish_add_path /Users/schuberth/.cargo/bin
 fish_add_path /Users/schuberth/Library/Python/3.9/bin
 fish_add_path /Users/schuberth/.composer/vendor/bin
+fish_add_path /Users/schuberth/dotfiles/cf-utils
+fish_add_path /Users/schuberth/dotfiles/utils
 
 set fish_greeting
 set -x GOPATH /Users/schuberth/code
@@ -45,4 +47,4 @@ if test -e ~/dotfiles/fish/local.fish
     source ~/dotfiles/fish/local.fish
 end
 
-fish_add_path /opt/homebrew/opt/python@3.10/bin
+fish_add_path /opt/homebrew/opt/python@3.8/bin
