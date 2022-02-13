@@ -94,7 +94,7 @@ if $isMysql ; then
 
     connectionCommand="mysql --defaults-extra-file=$mysql_creds_file -h 127.0.0.1 -D $name -P $localport -u $username"
 
-    tmux split-window -p 90 'sleep 1; '"$connectionCommand"''
+    tmux split-window -p 90 'sleep 5; '"$connectionCommand"''
     cf ssh $target -L "$localport":"$endpoint":"$port"
 
     # remove creds file after closing connection
@@ -109,7 +109,7 @@ if $isMongo ; then
     fi
 
     connectionCommand="mongo mongodb://$username:$password@127.0.0.1:$localport --tls --tlsAllowInvalidHostnames --tlsCAFile $rdsCAFile"
-    tmux split-window -p 90 'sleep 1; '"$connectionCommand"''
+    tmux split-window -p 90 'sleep 5; '"$connectionCommand"''
 
     cf ssh $target -L "$localport":"$endpoint":"$port"
 fi
