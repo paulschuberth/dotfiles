@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+workingDir=$(pwd)
+for d in */; do
+
+    # reset by going into the initial working directory
+    cd ${workingDir}
+
+    echo "Directory: ${d}"
+    cd ${d} # go into directory
+
+    # Check if its a git repo
+    $(git rev-parse --is-inside-work-tree &> /dev/null )
+    if [[ $? != 0 ]]; then
+        echo "${d} is not controlled by Git. Skipping."
+        continue
+    fi
+    branch=$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')
+
+    echo "Determined default branch: ${branch}"
+    echo "Switching to it..."
+
+    git switch ${branch}
+
+done
