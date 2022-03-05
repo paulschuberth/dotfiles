@@ -15,28 +15,28 @@ removeQuotes() {
 
 servicekey=$(cf service-key $1 key | tail -n +3)
 
-endpoint=$(echo ${servicekey} | jq '.endpoint')
+endpoint=$(echo ${servicekey} | jq '.credentials.endpoint')
 endpoint=$(removeQuotes "$endpoint")
 
-username=$(echo ${servicekey} | jq '.username')
+username=$(echo ${servicekey} | jq '.credentials.username')
 if [ "$username" == 'null' ]; then    
-    username=$(echo ${servicekey} | jq '.user')
+    username=$(echo ${servicekey} | jq '.credentials.user')
 fi
 username=$(removeQuotes "$username")
 
-name=$(echo ${servicekey} | jq '.name')
+name=$(echo ${servicekey} | jq '.credentials.name')
 name=$(removeQuotes "$name")
 
-password=$(echo ${servicekey} | jq '.password')
+password=$(echo ${servicekey} | jq '.credentials.password')
 password=$(removeQuotes "$password")
 
-port=$(echo ${servicekey} | jq '.port')
+port=$(echo ${servicekey} | jq '.credentials.port')
 port=$(removeQuotes "$port")
 
-uri=$(echo ${servicekey} | jq '.uri')
+uri=$(echo ${servicekey} | jq '.credentials.uri')
 
 if [ "$uri" == 'null' ]; then    
-    uri=$(echo ${servicekey} | jq '.url')
+    uri=$(echo ${servicekey} | jq '.credentials.url')
 fi
 
 uri=$(removeQuotes "$uri")
@@ -94,6 +94,7 @@ if $isMysql ; then
 
     connectionCommand="mysql --defaults-extra-file=$mysql_creds_file -h 127.0.0.1 -D $name -P $localport -u $username"
 
+    echo $connectionCommand | pbcopy || true
     tmux split-window -p 90 'sleep 5; '"$connectionCommand"''
     cf ssh $target -L "$localport":"$endpoint":"$port"
 
@@ -109,6 +110,7 @@ if $isMongo ; then
     fi
 
     connectionCommand="mongo mongodb://$username:$password@127.0.0.1:$localport --tls --tlsAllowInvalidHostnames --tlsCAFile $rdsCAFile"
+    echo $connectionCommand | pbcopy || true
     tmux split-window -p 90 'sleep 5; '"$connectionCommand"''
 
     cf ssh $target -L "$localport":"$endpoint":"$port"
