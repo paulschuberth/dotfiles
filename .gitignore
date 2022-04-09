@@ -9,5 +9,6 @@ vim/plugged/**
 neovim/plugged/**
 fish/aliases.fish
 fish/local.fish
+fish/fish_variables
 
 git/local
