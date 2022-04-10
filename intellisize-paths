@@ -1,0 +1,1 @@
+grep -rl /usr/local . | xargs sed -i "" -e "s,/opt/homebrew,/usr/local,g"
