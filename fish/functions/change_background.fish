@@ -22,9 +22,9 @@ function change_background --argument mode_setting
   # change alacritty
   switch $mode
     case dark
-      python3 alacritty-colorscheme apply $ALACRITTY_THEME_DARK
+        alacritty-themes $ALACRITTY_THEME_DARK
     case light
-      python3 alacritty-colorscheme apply $ALACRITTY_THEME_LIGHT
+        alacritty-themes $ALACRITTY_THEME_LIGHT
   end
 
   # well, seems like there is no proper way to send a command to 
