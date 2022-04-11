@@ -16,7 +16,7 @@ set -x GOPATH /Users/schuberth/code
 set -x GOBIN /Users/schuberth/go/bin
 
 set -xg ALACRITTY_THEME_DARK Monokai-Pro
-set -xg ALACRITTY_THEME_LIGHT Monokai.Light
+set -xg ALACRITTY_THEME_LIGHT Baskerville-ivorylight
 
 if type -q starship
 	starship init fish | source
