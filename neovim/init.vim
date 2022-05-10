@@ -18,7 +18,7 @@ noremap <Left> <Nop>
 set splitbelow
 set splitright
 
-" set nonumber
+set nonumber
 set number relativenumber
 set nowrap
 set fillchars+=vert:\ " invisble vertical split line.
@@ -85,7 +85,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'gruvbox-community/gruvbox'
 Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'edkolev/tmuxline.vim'
@@ -93,7 +92,6 @@ Plug 'dag/vim-fish'
 Plug 'fatih/vim-go'
 Plug 'airblade/vim-gitgutter'
 Plug 'neovim/nvim-lspconfig'
-Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
