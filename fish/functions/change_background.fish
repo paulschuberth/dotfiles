@@ -30,14 +30,14 @@ function change_background --argument mode_setting
   # well, seems like there is no proper way to send a command to 
   # Vim as a client. Luckily we're using tmux, which means we can 
   # iterate over all vim sessions and change the background ourself.
-  set -l tmux_wins (/opt/homebrew/bin/tmux list-windows -t main)
 
-  for wix in (/opt/homebrew/bin/tmux list-windows -t main -F 'main:#{window_index}')
-    for pix in (/opt/homebrew/bin/tmux list-panes -F 'main:#{window_index}.#{pane_index}' -t $wix)
+  set brew_prefix (brew --prefix)
+  set -l tmux_wins ($brew_prefix/bin/tmux list-windows -t main)
+
+  for wix in ($brew_prefix/bin/tmux list-windows -t main -F 'main:#{window_index}')
+    for pix in ($brew_prefix/bin/tmux list-panes -F 'main:#{window_index}.#{pane_index}' -t $wix)
       set -l is_vim "ps -o state= -o comm= -t '#{pane_tty}'  | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?\$'"
-      #/opt/homebrew/bin/tmux if-shell -t "$pix" "$is_vim" "send-keys -t $pix escape ENTER"
-      #/opt/homebrew/bin/tmux if-shell -t "$pix" "$is_vim" "send-keys -t $pix ':call ChangeBackground()' ENTER"
-      /opt/homebrew/bin/tmux if-shell -t "$pix" "$is_vim" "send-keys -t $pix ':source ~/dotfiles/neovim/init.vim' ENTER"
+      $brew_prefix/bin/tmux if-shell -t "$pix" "$is_vim" "send-keys -t $pix ':source ~/dotfiles/neovim/init.vim' ENTER"
     end
   end
 
