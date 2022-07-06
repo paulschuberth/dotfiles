@@ -47,3 +47,7 @@ end
 
 fish_add_path /opt/homebrew/opt/python@3.8/bin
 fish_add_path /opt/homebrew/opt/node@16/bin
+
+# Pack completion
+source (pack completion --shell fish)
+
