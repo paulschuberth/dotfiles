@@ -12,3 +12,8 @@ fish/local.fish
 fish/fish_variables
 
 git/local
+utils/
+
+#!utils/switch-to-default-branch
+#!utils/notify.swift
+#!utils/autolaunch-music
