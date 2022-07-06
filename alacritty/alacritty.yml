@@ -517,28 +517,33 @@ key_bindings:
 colors:
   # Default colors
   primary:
-    background: '#2D2A2E'
-    foreground: '#FCFCFA'
+    background: '#181818'
+    foreground: '#d8d8d8'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '#d8d8d8'
+    cursor: '#d8d8d8'
 
   # Normal colors
   normal:
-    black: '#403E41'
-    red: '#FF6188'
-    green: '#A9DC76'
-    yellow: '#FFD866'
-    blue: '#FC9867'
-    magenta: '#AB9DF2'
-    cyan: '#78DCE8'
-    white: '#FCFCFA'
+    black: '#181818'
+    red: '#ab4642'
+    green: '#a1b56c'
+    yellow: '#f7ca88'
+    blue: '#7cafc2'
+    magenta: '#ba8baf'
+    cyan: '#86c1b9'
+    white: '#d8d8d8'
 
   # Bright colors
   bright:
-    black: '#727072'
-    red: '#FF6188'
-    green: '#A9DC76'
-    yellow: '#FFD866'
-    blue: '#FC9867'
-    magenta: '#AB9DF2'
-    cyan: '#78DCE8'
-    white: '#FCFCFA'
-theme: Monokai-Pro
+    black: '#585858'
+    red: '#ab4642'
+    green: '#a1b56c'
+    yellow: '#f7ca88'
+    blue: '#7cafc2'
+    magenta: '#ba8baf'
+    cyan: '#86c1b9'
+    white: '#f8f8f8'
+theme: Base16-Default-Dark
