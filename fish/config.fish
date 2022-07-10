@@ -15,19 +15,19 @@ set fish_greeting
 set -x GOPATH /Users/schuberth/code
 set -x GOBIN /Users/schuberth/go/bin
 
-set -xg ALACRITTY_THEME_DARK Base16-Default-Dark
-set -xg ALACRITTY_THEME_LIGHT Terminal-app-Basic
+set -xg ALACRITTY_THEME_DARK Tomorrow.dark
+set -xg ALACRITTY_THEME_LIGHT Tomorrow.light
 
 if type -q starship
 	starship init fish | source
 end
 
-if status is-interactive
-    if not set -q TMUX
-        # attempt to attach to tmux session
-        tmux attach -t main || tmux new -s main
-    end
-end
+# if status is-interactive
+#     if not set -q TMUX
+#         # attempt to attach to tmux session
+#         tmux attach -t main || tmux new -s main
+#     end
+# end
 
 fish_add_path (brew --prefix)/opt/mysql@5.6/bin
 fish_add_path (brew --prefix)/sbin

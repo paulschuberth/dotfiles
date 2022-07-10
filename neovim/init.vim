@@ -92,6 +92,8 @@ Plug 'dag/vim-fish'
 Plug 'fatih/vim-go'
 Plug 'airblade/vim-gitgutter'
 Plug 'neovim/nvim-lspconfig'
+Plug 'chriskempson/tomorrow-theme'
+
 
 call plug#end()
 

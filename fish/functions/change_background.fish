@@ -21,11 +21,14 @@ function change_background --argument mode_setting
   end
 
 # change alacritty
+  set -e BAT_THEME
   switch $mode
     case dark
        alacritty-themes $ALACRITTY_THEME_DARK
+       set -x BAT_THEME "Tomorrow-Night"
     case light
         alacritty-themes $ALACRITTY_THEME_LIGHT
+        set -x BAT_THEME "Tomorrow"
   end
 
   # well, seems like there is no proper way to send a command to 
