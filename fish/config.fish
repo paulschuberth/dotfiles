@@ -51,3 +51,5 @@ fish_add_path /opt/homebrew/opt/node@16/bin
 # Pack completion
 source (pack completion --shell fish)
 
+# The fuck
+thefuck --alias | source
