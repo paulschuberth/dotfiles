@@ -15,8 +15,8 @@ set fish_greeting
 set -x GOPATH /Users/schuberth/code
 set -x GOBIN /Users/schuberth/go/bin
 
-set -xg ALACRITTY_THEME_DARK Tomorrow.dark
-set -xg ALACRITTY_THEME_LIGHT Tomorrow.light
+set -xg ALACRITTY_THEME_DARK Atelierdune.dark
+set -xg ALACRITTY_THEME_LIGHT Atelierdune.light
 
 if type -q starship
 	starship init fish | source
