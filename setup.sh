@@ -18,7 +18,7 @@ rm ~/.config/fish &> /dev/null
 rm -rf ~/.config/fish &> /dev/null
 ln -sF ~/dotfiles/fish/ ~/.config/fish
 
-if command -v starhip &> /dev/null; then
+if command -v starship &> /dev/null; then
     rm ~/.config/starship.toml
     ln -sF ~/dotfiles/starship/starship.toml ~/.config/starship.toml
 fi
