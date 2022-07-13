@@ -92,13 +92,29 @@ Plug 'dag/vim-fish'
 Plug 'fatih/vim-go'
 Plug 'airblade/vim-gitgutter'
 Plug 'neovim/nvim-lspconfig'
-Plug 'chriskempson/tomorrow-theme'
+Plug 'bradcush/base16-nvim'
 
 
 call plug#end()
 
 " Visuals
 syntax on
+
+
+" changebackground changes the background mode based on macos's `appearance`
+" setting. we also refresh the statusline colors to reflect the new mode.
+function! ChangeBackground()
+  if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
+    set background=dark   " for dark version of theme
+    colorscheme base16-atelier-dune
+  else
+    set background=light  " for light version of theme
+    colorscheme base16-atelier-dune-light
+  endif
+
+endfunction
+
+call ChangeBackground()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

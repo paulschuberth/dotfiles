@@ -22,12 +22,12 @@ if type -q starship
 	starship init fish | source
 end
 
-# if status is-interactive
-#     if not set -q TMUX
+if status is-interactive
+    if not set -q TMUX
 #         # attempt to attach to tmux session
-#         tmux attach -t main || tmux new -s main
-#     end
-# end
+        tmux new-session -A -s main
+    end
+end
 
 fish_add_path (brew --prefix)/opt/mysql@5.6/bin
 fish_add_path (brew --prefix)/sbin

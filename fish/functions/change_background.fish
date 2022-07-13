@@ -38,11 +38,12 @@ function change_background --argument mode_setting
   set brew_prefix (brew --prefix)
   set -l tmux_wins ($brew_prefix/bin/tmux list-windows -t main)
 
+  # Resource init.vim for all vim instances after the theme has been changed
   for wix in ($brew_prefix/bin/tmux list-windows -t main -F 'main:#{window_index}')
-    for pix in ($brew_prefix/bin/tmux list-panes -F 'main:#{window_index}.#{pane_index}' -t $wix)
-      set -l is_vim "ps -o state= -o comm= -t '#{pane_tty}'  | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?\$'"
-      $brew_prefix/bin/tmux if-shell -t "$pix" "$is_vim" "send-keys -t $pix ':source ~/dotfiles/neovim/init.vim' ENTER"
-    end
+      for pix in ($brew_prefix/bin/tmux list-panes -F 'main:#{window_index}.#{pane_index}' -t $wix)
+          set -l is_vim "ps -o state= -o comm= -t '#{pane_tty}'  | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?\$'"
+          $brew_prefix/bin/tmux if-shell -t "$pix" "$is_vim" "send-keys -t $pix ':source ~/dotfiles/neovim/init.vim' ENTER"
+      end
   end
 
 
