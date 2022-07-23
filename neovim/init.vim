@@ -91,8 +91,12 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'dag/vim-fish'
 Plug 'fatih/vim-go'
 Plug 'airblade/vim-gitgutter'
-Plug 'neovim/nvim-lspconfig'
 Plug 'bradcush/base16-nvim'
+
+Plug 'autozimu/LanguageClient-neovim', {
+            \ 'branch': 'next',
+            \ 'do': 'bash install.sh',
+            \ }
 
 
 call plug#end()
@@ -180,8 +184,6 @@ endfunction
 " Use U to show documentation in preview window
 nnoremap <silent> U :call <SID>show_documentation()<CR>
 
-" Language server config
-lua << EOF
-require'lspconfig'.pyright.setup{}
-EOF
-
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rust-analyzer']
+    \ }
