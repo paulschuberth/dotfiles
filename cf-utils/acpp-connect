@@ -112,6 +112,10 @@ determinePort() {
     port=33018
     ;;
 
+    servicelead-db*)
+    port=33019
+    ;;
+
     driverlog_db)
     port=20714
     ;;
