@@ -81,6 +81,11 @@ do
     esac
 done
 
+# get current window name
+with_asterisk_and_space=$(tmux list-windows | grep '(active)' | grep -o -E " .+\*")
+with_asterisk=${with_asterisk_and_space#" "}
+previous_name=${with_asterisk%"*"}
+
 # rename window to the current db service
 tmux rename-window "$dbservice"
 
@@ -115,3 +120,5 @@ if $isMongo ; then
 
     cf ssh $target -L "$localport":"$endpoint":"$port"
 fi
+
+tmux rename-window "$previous_name"
