@@ -3,7 +3,7 @@
 determinePort() {
   port=3306
   case $1 in
-    achievements-db*)
+    achievement-db*)
     port=33060
     ;;
 
@@ -119,6 +119,11 @@ determinePort() {
     driverlog_db)
     port=20714
     ;;
+    
+    reporting-db*)
+    port=33020
+    ;;
+
 
   esac
 }
