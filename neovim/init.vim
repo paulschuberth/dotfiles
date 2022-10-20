@@ -82,6 +82,7 @@ call plug#begin('/Users/schuberth/dotfiles/neovim/plugged')
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
