@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Create New Tmux
+tmux new-window -n 'Laravel Dev'
+
+# Split terminal into five panes
+tmux split-window -t 'Laravel Dev' -b -l 80%
+tmux split-window -t 'Laravel Dev' -b -l 75%
+tmux split-window -t 'Laravel Dev' -b -l 66%
+tmux split-window -t 'Laravel Dev' -b -l 50%
+
+# Run services in first four panes
+tmux send-keys -t 'Laravel Dev.1' ./vendor/laravel/dusk/bin/chromedriver-mac-arm Enter
+tmux send-keys -t 'Laravel Dev.2' 'npm run dev' Enter
+tmux send-keys -t 'Laravel Dev.3' 'php artisan serve' Enter
+tmux send-keys -t 'Laravel Dev.4' 'sail up' Enter
+
+# Zoom fith pane
+tmux resize-pane -Z -t 'Laravel Dev.5'
