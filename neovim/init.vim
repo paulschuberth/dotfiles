@@ -93,6 +93,8 @@ Plug 'dag/vim-fish'
 Plug 'fatih/vim-go'
 Plug 'airblade/vim-gitgutter'
 Plug 'bradcush/base16-nvim'
+Plug 'matsub/github-actions.vim'
+
 
 Plug 'autozimu/LanguageClient-neovim', {
             \ 'branch': 'next',
