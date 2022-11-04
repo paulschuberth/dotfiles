@@ -124,6 +124,9 @@ determinePort() {
     port=33020
     ;;
 
+    configuration-db-test*)
+    port=33021
+    ;;
 
   esac
 }
