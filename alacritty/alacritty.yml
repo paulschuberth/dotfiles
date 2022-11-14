@@ -515,30 +515,35 @@ key_bindings:
   # Print all received window events.
   #print_events: false
 colors:
-  name: Atelierdune (dark)
-  author: Chris Kempson
+  # Default colors
   primary:
-    background: "#20201d"
-    foreground: "#a6a28c"
+    background: '#1d1f21'
+    foreground: '#c5c8c6'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: "#20201d"
-    cursor: "#a6a28c"
+    text: '#1d1f21'
+    cursor: '#ffffff'
+
+  # Normal colors
   normal:
-    black: "#20201d"
-    red: "#d73737"
-    green: "#60ac39"
-    yellow: "#cfb017"
-    blue: "#6684e1"
-    magenta: "#b854d4"
-    cyan: "#1fad83"
-    white: "#a6a28c"
+    black: '#1d1f21'
+    red: '#cc6666'
+    green: '#b5bd68'
+    yellow: '#e6c547'
+    blue: '#81a2be'
+    magenta: '#b294bb'
+    cyan: '#70c0ba'
+    white: '#373b41'
+
+  # Bright colors
   bright:
-    black: "#7d7a68"
-    red: "#d73737"
-    green: "#60ac39"
-    yellow: "#cfb017"
-    blue: "#6684e1"
-    magenta: "#b854d4"
-    cyan: "#1fad83"
-    white: "#fefbec"
-theme: Atelierdune.dark
+    black: '#666666'
+    red: '#ff3334'
+    green: '#9ec400'
+    yellow: '#f0c674'
+    blue: '#81a2be'
+    magenta: '#b77ee0'
+    cyan: '#54ced6'
+    white: '#282a2e'
+theme: Tomorrow-Night
