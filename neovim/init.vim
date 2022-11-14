@@ -94,7 +94,7 @@ Plug 'fatih/vim-go'
 Plug 'airblade/vim-gitgutter'
 Plug 'bradcush/base16-nvim'
 Plug 'matsub/github-actions.vim'
-
+Plug 'preservim/nerdtree'
 
 Plug 'autozimu/LanguageClient-neovim', {
             \ 'branch': 'next',
@@ -146,7 +146,7 @@ autocmd FileType tex nmap <buffer> C :!rubber --clean<CR>
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_layout = { 'down': '~20%' }
 
-" search 
+" search
 nmap <C-p> :FzfHistory<cr>
 imap <C-p> <esc>:<C-u>FzfHistory<cr>
 
