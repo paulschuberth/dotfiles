@@ -30,9 +30,11 @@ function change_background
         case dark
             alacritty-themes $ALACRITTY_THEME_DARK
             set -U BAT_THEME Tomorrow-Night
+            git config --global delta.light false
         case light
             alacritty-themes $ALACRITTY_THEME_LIGHT
-            set -U BAT_THEME Tomorrow
+            set -U BAT_THEME GitHub
+            git config --global delta.light true
     end
 
     # well, seems like there is no proper way to send a command to 
