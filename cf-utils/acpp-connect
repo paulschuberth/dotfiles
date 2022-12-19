@@ -23,7 +23,7 @@ determinePort() {
     port=33061
     ;;
 
-    challenges-db*)
+    challenge-db*)
     port=33062
     ;;
 
