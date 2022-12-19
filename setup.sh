@@ -27,7 +27,8 @@ rm ~/.gitconfig &> /dev/null
 ln -sF ~/dotfiles/git/gitconfig ~/.gitconfig
 
 rm ~/.config/nvim/init.vim
-ln -sF ~/dotfiles/neovim/init.vim ~/.config/nvim/init.vim
+rm ~/.config/nvim/init.lua
+ln -sF ~/dotfiles/neovim/init.lua ~/.config/nvim/init.lua
 rm ~/.ideavimrc &> /dev/null
 ln -sF ~/dotfiles/neovim/init.vim ~/.ideavimrc
 
