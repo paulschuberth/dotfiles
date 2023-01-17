@@ -63,7 +63,7 @@ determinePort() {
     port=33065
     ;;
 
-    identity-db*)
+    identitykit-db*)
     port=33066
     ;;
 
