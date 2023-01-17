@@ -60,6 +60,12 @@ require('packer').startup(function(use)
   -- TypeScript
   use 'David-Kunz/jester'
 
+  -- Nerdtree
+  use 'preservim/nerdtree'
+
+  -- Run Tests
+  use 'vim-test/vim-test'
+
   -- Add custom plugins to packer from /nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
@@ -285,6 +291,18 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+
+-- vim-test/vim-test
+vim.g['test#strategy'] = {
+  nearest = 'neovim',
+  file = 'neovim',
+  suite = 'neovim'
+}
+vim.keymap.set('n', '<leader>t', ':TestNearest<CR>', { silent = true , noremap = true })
+vim.keymap.set('n', '<leader>T', ':TestFile<CR>', { silent = true , noremap = true })
+vim.keymap.set('n', '<leader>a', ':TestSuite<CR>', { silent = true , noremap = true })
+vim.keymap.set('n', '<leader>l', ':TestLast<CR>', { silent = true , noremap = true })
+vim.keymap.set('n', '<leader>g', ':TestVisit<CR>', { silent = true , noremap = true })
 
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
