@@ -1,0 +1,22 @@
+[push]
+	autoSetupRemote = true
+[user]
+	name = Paul Schuberth
+	email = github@pschuberth.de
+[alias]
+	clean-branches = !git branch | grep -v -e main -e master -e develop | xargs git branch -D
+[delta]
+	light = false
+[advice]
+	skippedCherryPicks = false
+
+# Settings for Project ACPP
+[includeIf "gitdir:~/code/acpp/"]
+	path = .gitconfig-acpp
+
+[includeIf "gitdir:~/code/acpp/backend/"]
+	path = .gitconfig-acpp-backend
+
+# Settings for 
+[includeIf "gitdir:~/code/personal/"]
+	path = .gitconfig-personal

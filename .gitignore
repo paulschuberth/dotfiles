@@ -19,3 +19,5 @@ utils/
 #!utils/autolaunch-music
 
 .luarc.json
+git/gitconfig-acpp
+git/gitconfig-acpp-backend

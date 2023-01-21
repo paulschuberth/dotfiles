@@ -26,6 +26,15 @@ fi
 rm ~/.gitconfig &> /dev/null
 ln -sF ~/dotfiles/git/gitconfig ~/.gitconfig
 
+rm ~/.gitconfig-acpp &> /dev/null
+ln -sF ~/dotfiles/git/gitconfig-acpp ~/.gitconfig-acpp
+
+rm ~/.gitconfig-acpp-backend &> /dev/null
+ln -sF ~/dotfiles/git/gitconfig-acpp-backend ~/.gitconfig-acpp-backend
+
+rm ~/.gitconfig-personal &> /dev/null
+ln -sF ~/dotfiles/git/gitconfig-personal ~/.gitconfig-personal
+
 rm ~/.config/nvim/init.vim
 rm ~/.config/nvim/init.lua
 ln -sF ~/dotfiles/neovim/init.lua ~/.config/nvim/init.lua
