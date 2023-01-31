@@ -5,8 +5,7 @@
 	email = github@pschuberth.de
 [alias]
 	clean-branches = !git branch | grep -v -e main -e master -e develop | xargs git branch -D
-[delta]
-	light = false
+	dft = difftool
 [advice]
 	skippedCherryPicks = false
 
@@ -20,3 +19,17 @@
 # Settings for 
 [includeIf "gitdir:~/code/personal/"]
 	path = .gitconfig-personal
+[diff]
+	external = difft
+	tool = difftastic
+
+[difftool]
+	prompt = false
+
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+	difftool = true
+[delta]
+	light = false
