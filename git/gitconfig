@@ -4,7 +4,7 @@
 	name = Paul Schuberth
 	email = github@pschuberth.de
 [alias]
-	clean-branches = !git for-each-ref --format '"%(refname:short)"' refs/heads/ --merged | grep -v -e  main -e develop -e master | xargs git branch -D
+	clean-branches = !git branch | grep -v -e main -e master -e develop | xargs git branch -D
 	clean-all-branches = !git for-each-ref --format '"%(refname:short)"' refs/heads/ | grep -v -e  main -e develop -e master | xargs git branch -D
 	dft = difftool
 [advice]
@@ -24,6 +24,12 @@
 	external = difft
 	tool = difftastic
 
+[diff "localizablestrings"]
+	textconv = "iconv -f utf-16 -t utf-8"
+
+[diff "plist"]
+	textconv = plutil -convert xml1 -o -
+
 [difftool]
 	prompt = false
 
@@ -35,4 +41,6 @@
 [delta]
 	light = false
 [rebase]
-	autoStash = true
+	autostash = true
+[core]
+	attributesFile = /Users/schuberth/dotfiles/git/gitattributes
