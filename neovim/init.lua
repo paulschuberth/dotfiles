@@ -45,7 +45,7 @@ require('packer').startup(function(use)
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
 
-  use 'navarasu/onedark.nvim' -- Theme inspired by Atom
+  use 'ellisonleao/gruvbox.nvim'
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
@@ -62,9 +62,13 @@ require('packer').startup(function(use)
 
   -- Nerdtree
   use 'preservim/nerdtree'
+  vim.g.NERDTree = 1
 
   -- Run Tests
   use 'vim-test/vim-test'
+
+  -- JSON Schema
+  use 'b0o/schemastore.nvim'
 
   -- Add custom plugins to packer from /nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
@@ -126,7 +130,27 @@ vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
 vim.o.termguicolors = true
-vim.cmd [[colorscheme onedark]]
+vim.o.background = 'light'
+-- setup must be called before loading the colorscheme
+-- Default options:
+require("gruvbox").setup({
+  undercurl = true,
+  underline = true,
+  bold = true,
+  italic = true,
+  strikethrough = true,
+  invert_selection = false,
+  invert_signs = false,
+  invert_tabline = false,
+  invert_intend_guides = false,
+  inverse = true, -- invert background for search, diffs, statuslines and errors
+  contrast = "", -- can be "hard", "soft" or empty string
+  palette_overrides = {},
+  overrides = {},
+  dim_inactive = false,
+  transparent_mode = false,
+})
+vim.cmd("colorscheme gruvbox")
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -157,12 +181,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+-- Set theme
+vim.o.background = 'dark'
+
 -- Set lualine as statusline
 -- See `:help lualine.txt`
 require('lualine').setup {
   options = {
     icons_enabled = false,
-    theme = 'onedark',
+    theme = 'gruvbox',
     component_separators = '|',
     section_separators = '',
   },
@@ -304,6 +331,15 @@ vim.keymap.set('n', '<leader>a', ':TestSuite<CR>', { silent = true , noremap = t
 vim.keymap.set('n', '<leader>l', ':TestLast<CR>', { silent = true , noremap = true })
 vim.keymap.set('n', '<leader>g', ':TestVisit<CR>', { silent = true , noremap = true })
 
+-- Don't use Ex Mode. Use Q for formatting instead
+vim.keymap.set('n', 'Q', 'gq', { silent = true, noremap = true })
+
+-- Use incremental search
+vim.g.incsearch = 1
+
+-- Show a few lines of context around cursor
+vim.g.scrolloff = 5
+
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
@@ -358,7 +394,7 @@ require('mason').setup()
 
 -- Enable the following language servers
 -- Feel free to add/remove any LSPs that you want here. They will automatically be installed
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'sumneko_lua', 'gopls' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'sumneko_lua', 'gopls', 'jsonls' }
 
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {
@@ -449,9 +485,6 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
-
--- Keep cursor in the middle at all times
-vim.o.scrolloff = 999
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
