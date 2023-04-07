@@ -132,6 +132,9 @@ determinePort() {
     port=33022
     ;;
 
+    achievements-db*)
+    port=33068
+    ;;
   esac
 }
 
