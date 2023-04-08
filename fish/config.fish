@@ -1,6 +1,9 @@
 
 set PATH "$PATH:/Users/schuberth/bin:/Users/schuberth/.sdkman/bin"
 set EDITOR vim
+set -gx LC_ALL en_US.UTF-8
+set -gx LANG en_US.UTF-8
+set -gx LANGUAGE en_US.UTF-8
 
 fish_add_path /Users/schuberth/bin
 fish_add_path /Users/schuberth/.sdkman/bin
