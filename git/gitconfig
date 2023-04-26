@@ -45,3 +45,8 @@
 	autostash = true
 [core]
 	attributesFile = /Users/schuberth/dotfiles/git/gitattributes
+[bulkworkspaces]
+	acpp = /Users/schuberth/code/acpp
+	backend = /Users/schuberth/code/acpp/backend
+	other = /Users/schuberth/code/acpp/other
+	frontend = /Users/schuberth/code/acpp/frontend
