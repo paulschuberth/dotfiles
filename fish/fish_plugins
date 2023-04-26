@@ -1,5 +1,5 @@
 jorgebucaran/fisher
 reitzig/sdkman-for-fish@v1.4.0
 jorgebucaran/nvm.fish
-evanlucas/fish-kubectl-completions
 PatrickF1/fzf.fish
+evanlucas/fish-kubectl-completions
