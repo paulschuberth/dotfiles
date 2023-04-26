@@ -12,6 +12,7 @@
 
 # Settings for Project ACPP
 [includeIf "gitdir:~/code/acpp/"]
+	path = .gitconfig-acpp-local
 	path = .gitconfig-acpp
 
 [includeIf "gitdir:~/code/acpp/backend/"]

@@ -29,6 +29,9 @@ ln -sF ~/dotfiles/git/gitconfig ~/.gitconfig
 rm ~/.gitconfig-acpp &> /dev/null
 ln -sF ~/dotfiles/git/gitconfig-acpp ~/.gitconfig-acpp
 
+rm ~/.gitconfig-acpp-local &> /dev/null
+ln -sF ~/dotfiles/git/gitconfig-acpp-local ~/.gitconfig-acpp-local
+
 rm ~/.gitconfig-acpp-backend &> /dev/null
 ln -sF ~/dotfiles/git/gitconfig-acpp-backend ~/.gitconfig-acpp-backend
 
