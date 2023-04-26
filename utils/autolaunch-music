@@ -2,6 +2,11 @@
 
 input=$1
 
+if [ -z $input ]; then
+    echo "Usage: $0 true|false"
+    exit 1;
+fi
+
 if [ $input = 'true' ]; then
     launchctl load -w /System/Library/LaunchAgents/com.apple.rcd.plist
     echo "Enabling autolaunch of Music"
