@@ -70,6 +70,9 @@ require('packer').startup(function(use)
   -- JSON Schema
   use 'b0o/schemastore.nvim'
 
+  -- Auto close
+  use 'jiangmiao/auto-pairs'
+
   -- Add custom plugins to packer from /nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
   if has_plugins then
