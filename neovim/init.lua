@@ -401,7 +401,7 @@ require('mason').setup()
 
 -- Enable the following language servers
 -- Feel free to add/remove any LSPs that you want here. They will automatically be installed
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'lua_ls', 'gopls', 'jsonls' }
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'lua_ls', 'gopls', 'jsonls', 'phpactor' }
 
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {
@@ -491,6 +491,33 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   },
+}
+
+-- laravel.nvim setup
+return {
+  "adalessa/laravel.nvim",
+  dependencies = {
+    "nvim-telescope/telescope.nvim",
+    "tpope/vim-dotenv",
+  },
+  cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
+  keys = {
+    { "<leader>la", ":Laravel artisan<cr>" },
+    { "<leader>lr", ":Laravel routes<cr>" },
+    {
+      "<leader>lt",
+      function()
+        require("laravel.tinker").send_to_tinker()
+      end,
+      mode = "v",
+      desc = "Laravel Application Routes",
+    },
+  },
+  event = { "VeryLazy" },
+  config = function()
+    require("laravel").setup()
+    require("telescope").load_extension "laravel"
+  end,
 }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
