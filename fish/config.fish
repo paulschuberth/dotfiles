@@ -60,3 +60,6 @@ thefuck --alias | source
 # Git
 git config --global alias.clean-branches "!git branch | grep -v -e main -e master -e develop | xargs git branch -D"
 
+# FZF
+## Setup bindings
+fzf_configure_bindings --variables=\cv --processes=\cp --git_status=\cs --directory=\cf --git_log=\ch --history=\cr
