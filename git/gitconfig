@@ -5,7 +5,7 @@
 	email = github@pschuberth.de
 [alias]
 	dft = difftool
-	delete-local-without-remote = git branch -vv | grep ': gone]' | cut -d' ' -f 3 | grep . | xargs git branch -D
+	clean-branches = branch -vv | grep ': gone]' | cut -d' ' -f 3 | xargs git branch -D
 [advice]
 	skippedCherryPicks = false
 
@@ -21,7 +21,6 @@
 [includeIf "gitdir:~/code/personal/"]
 	path = .gitconfig-personal
 [diff]
-	external = difft
 	tool = difftastic
 
 [diff "localizablestrings"]
@@ -44,6 +43,7 @@
 	autostash = true
 [core]
 	attributesFile = /Users/schuberth/dotfiles/git/gitattributes
+	autocrlf = input
 [bulkworkspaces]
 	acpp = /Users/schuberth/code/acpp
 	backend = /Users/schuberth/code/acpp/backend
