@@ -5,6 +5,7 @@
 	email = github@pschuberth.de
 [alias]
 	dft = difftool
+	clean-branches = !git branch | grep -v -e main -e master -e develop | xargs git branch -D
 [advice]
 	skippedCherryPicks = false
 
