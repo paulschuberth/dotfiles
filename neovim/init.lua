@@ -51,6 +51,9 @@ require('packer').startup(function(use)
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
 
+-- Add fzf to runtime_path
+vim.opt.rtp:append('/opt/homebrew/opt/fzf')
+
   use {
     'junegunn/fzf.vim',
     requires = { 'junegunn/fzf', run = ':call fzf#install()' }
@@ -115,6 +118,11 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 -- Set highlight on search
 vim.o.hlsearch = false
 
+vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
+vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
+vim.o.softtabstop = 4 -- Number of spaces inserted instead of a TAB character
+vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
+
 -- Make line numbers default
 vim.wo.number = true
 
@@ -134,9 +142,6 @@ vim.o.smartcase = true
 -- Decrease update time
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
-
--- Add fzf to runtime_path
-vim.opt.rtp:append('/opt/homebrew/opt/fzf')
 
 -- Set colorscheme
 vim.o.termguicolors = true
