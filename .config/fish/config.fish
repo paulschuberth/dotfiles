@@ -16,6 +16,10 @@ fish_add_path /Users/schuberth/.composer/vendor/bin
 fish_add_path /Users/schuberth/dotfiles/cf-utils
 fish_add_path /Users/schuberth/dotfiles/utils
 
+
+fish_add_path /opt/homebrew/opt/php@8.2/bin
+fish_add_path /opt/homebrew/opt/php@8.2/sbin
+
 set fish_greeting
 set -x GOPATH /Users/schuberth/code
 set -x GOBIN /Users/schuberth/go/bin
