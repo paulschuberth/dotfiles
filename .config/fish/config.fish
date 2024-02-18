@@ -1,9 +1,11 @@
 
-set PATH "$PATH:/Users/schuberth/bin:/Users/schuberth/.sdkman/bin"
-set EDITOR vim
+set -gx PATH "$PATH:/Users/schuberth/bin:/Users/schuberth/.sdkman/bin"
+set -gx EDITOR vim
 set -gx LC_ALL en_US.UTF-8
 set -gx LANG en_US.UTF-8
 set -gx LANGUAGE en_US.UTF-8
+
+eval (brew shellenv)
 
 fish_add_path /Users/schuberth/bin
 fish_add_path /Users/schuberth/.sdkman/bin
@@ -32,8 +34,8 @@ if status is-interactive
     end
 end
 
-fish_add_path (brew --prefix)/opt/mysql@5.6/bin
-fish_add_path (brew --prefix)/sbin
+fish_add_path $HOMEBREW_PREFIX/opt/mysql@5.6/bin
+fish_add_path $HOMEBREW_PREFIX/sbin
 
 # Aliases
 alias vim="nvim"
@@ -48,8 +50,8 @@ if test -e ~/dotfiles/fish/local.fish
     source ~/dotfiles/fish/local.fish
 end
 
-fish_add_path /usr/local/opt/python@3.8/bin
-fish_add_path /usr/local/opt/node@16/bin
+fish_add_path $HOMEBREW_PREFIX/opt/python@3.8/bin
+fish_add_path $HOMEBREW_PREFIX/opt/node@20/bin
 
 # Pack completion
 source (pack completion --shell fish)
