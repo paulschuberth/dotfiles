@@ -1,5 +1,4 @@
 live_config_reload = true
-theme = "Tomorrow-Night"
 
 [colors]
 draw_bold_text_with_bright_colors = false
@@ -116,12 +115,6 @@ mods = "Alt"
 
 [mouse]
 hide_when_typing = false
-
-[mouse.double_click]
-threshold = 300
-
-[mouse.triple_click]
-threshold = 300
 
 [selection]
 save_to_clipboard = true
