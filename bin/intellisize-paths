@@ -1,1 +1,1 @@
-grep --exclude=**/intellisize-paths -rl /opt/homebrew . | xargs gsed -i -e "s,/opt/homebrew,/usr/local,g"
+grep --exclude=**/intellisize-paths --exclude=**/applify-paths -rl /opt/homebrew . | xargs gsed -i -e "s,/opt/homebrew,/usr/local,g"
