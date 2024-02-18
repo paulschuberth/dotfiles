@@ -1,6 +1,13 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:3400
+SETUVAR _fisher_PatrickF1_2F_fzf_2E_fish_files:/Users/schuberth/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_preview_changed_file\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_report_diff_type\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_search_processes\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e/Users/schuberth/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e/Users/schuberth/\x2econfig/fish/completions/fzf_configure_bindings\x2efish
+SETUVAR _fisher_jorgebucaran_2F_autopair_2E_fish_files:/Users/schuberth/\x2econfig/fish/functions/_autopair_backspace\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_autopair_insert_left\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_autopair_insert_right\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_autopair_insert_same\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_autopair_tab\x2efish\x1e/Users/schuberth/\x2econfig/fish/conf\x2ed/autopair\x2efish
+SETUVAR _fisher_jorgebucaran_2F_nvm_2E_fish_files:/Users/schuberth/\x2econfig/fish/functions/_nvm_index_update\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_nvm_list\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_nvm_version_activate\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_nvm_version_deactivate\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/nvm\x2efish\x1e/Users/schuberth/\x2econfig/fish/conf\x2ed/nvm\x2efish\x1e/Users/schuberth/\x2econfig/fish/completions/nvm\x2efish
+SETUVAR _fisher_laughedelic_2F_brew_2D_completions_files:/Users/schuberth/\x2econfig/fish/completions/brew\x2efish
+SETUVAR _fisher_nakulj_2F_auto_2D_venv_files:/Users/schuberth/\x2econfig/fish/conf\x2ed/venv\x2efish
+SETUVAR _fisher_nickeb96_2F_puffer_2D_fish_files:/Users/schuberth/\x2econfig/fish/functions/_puffer_fish_expand_bang\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_puffer_fish_expand_dots\x2efish\x1e/Users/schuberth/\x2econfig/fish/functions/_puffer_fish_expand_lastarg\x2efish\x1e/Users/schuberth/\x2econfig/fish/conf\x2ed/puffer_fish_key_bindings\x2efish
+SETUVAR _fisher_plugins:PatrickF1/fzf\x2efish\x1ejorgebucaran/nvm\x2efish\x1elaughedelic/brew\x2dcompletions\x1enakulj/auto\x2dvenv\x1ejorgebucaran/autopair\x2efish\x1enickeb96/puffer\x2dfish
 SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:blue
@@ -29,4 +36,4 @@ SETUVAR fish_pager_color_description:yellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/usr/local/sbin\x1e/Users/schuberth/bin
+SETUVAR fish_user_paths:/usr/local/opt/node\x4016/bin\x1e/usr/local/opt/python\x403\x2e8/bin\x1e/usr/local/sbin\x1e/Users/schuberth/bin

@@ -1,4 +1,6 @@
-jorgebucaran/nvm.fish
-evanlucas/fish-kubectl-completions
-reitzig/sdkman-for-fish
 PatrickF1/fzf.fish
+jorgebucaran/nvm.fish
+laughedelic/brew-completions
+nakulj/auto-venv
+jorgebucaran/autopair.fish
+nickeb96/puffer-fish

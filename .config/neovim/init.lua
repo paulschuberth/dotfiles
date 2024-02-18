@@ -52,7 +52,7 @@ require('packer').startup(function(use)
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
 
 -- Add fzf to runtime_path
-vim.opt.rtp:append('/opt/homebrew/opt/fzf')
+vim.opt.rtp:append('/usr/local/opt/fzf')
 
   use {
     'junegunn/fzf.vim',

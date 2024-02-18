@@ -91,12 +91,12 @@ The solution is to find your brew prefix
 
 ```sh
 > echo "$(brew --prefix)/bin"
-/opt/homebrew/bin
+/usr/local/bin
 ```
 
 And prepend it to the `PATH` environment variable
 ```
-set-environment -g PATH "/opt/homebrew/bin:/bin:/usr/bin"
+set-environment -g PATH "/usr/local/bin:/bin:/usr/bin"
 ```
 
 before any `run-shell`/`run` commands in `~/.tmux.conf`.
