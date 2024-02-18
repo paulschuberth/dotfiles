@@ -1,8 +1,4 @@
 [submodule "tmux/tpm"]
-	path = tmux/tpm
+	path = .config/tmux/tpm
 	url = https://github.com/tmux-plugins/tpm
     ignore = dirty
-[submodule "themes/base16-alacritty"]
-	path = themes/base16-alacritty
-	url = git@github.com:aarowill/base16-alacritty.git
-    ingore = dirty

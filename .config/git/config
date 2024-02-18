@@ -19,7 +19,7 @@
 
 # Settings for 
 [includeIf "gitdir:~/code/personal/"]
-	path = .gitconfig-personal
+	path = ~/dotfiles/.config/git/gitconfig-personal
 [diff]
 	tool = difftastic
 
