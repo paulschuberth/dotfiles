@@ -23,3 +23,4 @@ git/gitconfig-acpp
 git/gitconfig-acpp-backend
 
 .config/thefuck/__pycache__/**
+fzf_key_bindings.fish

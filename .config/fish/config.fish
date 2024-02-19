@@ -46,14 +46,6 @@ alias vim="nvim"
 alias vi="nvim"
 alias python="python3"
 
-if test -e ~/dotfiles/fish/aliases.fish
-    source ~/dotfiles/fish/aliases.fish
-end
-
-if test -e ~/dotfiles/fish/local.fish
-    source ~/dotfiles/fish/local.fish
-end
-
 fish_add_path $HOMEBREW_PREFIX/opt/python@3.8/bin
 fish_add_path $HOMEBREW_PREFIX/opt/node@20/bin
 
