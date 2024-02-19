@@ -21,3 +21,5 @@ utils/
 .luarc.json
 git/gitconfig-acpp
 git/gitconfig-acpp-backend
+
+.config/thefuck/__pycache__/**
