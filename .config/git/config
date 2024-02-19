@@ -38,7 +38,7 @@
 [pager]
 	difftool = true
 [delta]
-	light = false
+	light = true
 [rebase]
 	autostash = true
 [core]

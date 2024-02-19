@@ -24,3 +24,5 @@ git/gitconfig-acpp-backend
 
 .config/thefuck/__pycache__/**
 fzf_key_bindings.fish
+.config/alacritty/shell.toml
+.config/alacritty/theme.toml

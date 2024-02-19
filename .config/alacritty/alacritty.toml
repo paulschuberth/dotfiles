@@ -2,7 +2,8 @@ live_config_reload = true
 
 
 import = [
-    "~/.config/alacritty/theme.toml"
+    "~/.config/alacritty/theme.toml",
+    "~/.config/alacritty/shell.toml",
 ]
 
 [font.bold]
@@ -92,10 +93,6 @@ hide_when_typing = false
 
 [selection]
 save_to_clipboard = true
-
-[shell]
-args = ["--login"]
-program = "$HOMEBREW_PREFIX/bin/fish"
 
 [window]
 dynamic_title = true
