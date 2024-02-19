@@ -28,11 +28,11 @@ function change_background
     set -e BAT_THEME
     switch $new_mode
         case dark
-            alacritty-themes $ALACRITTY_THEME_DARK
+            ln -s -f ~/.config/alacritty/themes/themes/tomorrow_night.toml ~/.config/alacritty/theme.toml
             set -U BAT_THEME Tomorrow-Night
             git config --global delta.light false
         case light
-            alacritty-themes $ALACRITTY_THEME_LIGHT
+            ln -s -f ~/.config/alacritty/themes/themes/github_light.toml ~/.config/alacritty/theme.toml
             set -U BAT_THEME GitHub
             git config --global delta.light true
     end

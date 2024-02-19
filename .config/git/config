@@ -38,7 +38,7 @@
 [pager]
 	difftool = true
 [delta]
-	light = false
+	light = true
 [rebase]
 	autostash = true
 [core]
@@ -51,3 +51,12 @@
 	frontend = /Users/schuberth/code/acpp/frontend
 [merge]
 	autostash = true
+[init]
+	defaultBranch = main
+[rerere]
+	enabled = true
+	autoUpdate = false
+[column]
+	ui = auto
+[maintenance]
+	repo = /Users/schuberth/code/personal/registration
