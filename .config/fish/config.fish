@@ -61,3 +61,6 @@ git config --global alias.clean-branches "!git branch | grep -v -e main -e maste
 # FZF
 ## Setup bindings
 fzf_configure_bindings --variables=\cv --processes=\cp --git_status=\cs --directory=\cf --git_log=\ch --history=\cr
+
+zoxide init --cmd cd fish | source
+
