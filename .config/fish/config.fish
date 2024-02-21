@@ -17,8 +17,8 @@ fish_add_path /Users/schuberth/dotfiles/cf-utils
 fish_add_path /Users/schuberth/dotfiles/utils
 
 
-fish_add_path /opt/homebrew/opt/php@8.2/bin
-fish_add_path /opt/homebrew/opt/php@8.2/sbin
+fish_add_path $HOMEBREW_PREFIX/opt/php@8.2/bin
+fish_add_path $HOMEBREW_PREFIX/opt/php@8.2/sbin
 
 set fish_greeting
 set -x GOPATH /Users/schuberth/code
