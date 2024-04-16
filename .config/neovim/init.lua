@@ -53,7 +53,7 @@ require('packer').startup(function(use)
 
 -- Add fzf to runtime_path
 vim.opt.rtp:append('/opt/homebrew/opt/fzf')
-vim.opt.rtp:append('/usr/local/opt/fzf')
+vim.opt.rtp:append('/opt/homebrew/opt/fzf')
 
   use {
     'junegunn/fzf.vim',

@@ -2,7 +2,7 @@
 	autoSetupRemote = true
 [user]
 	name = Paul Schuberth
-	email = github@pschuberth.de
+	email = paulnikolaus.schuberth@cgi.com
 [alias]
 	dft = difftool
 	clean-branches = !git branch | grep -v -e main -e master -e develop | xargs git branch -D
