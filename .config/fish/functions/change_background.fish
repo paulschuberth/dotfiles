@@ -18,10 +18,10 @@ function change_background
 
     # change macOS
     switch $new_mode
-    case light
-      osascript -l JavaScript -e "Application('System Events').appearancePreferences.darkMode = false" &>/dev/null
-    case dark
-      osascript -l JavaScript -e "Application('System Events').appearancePreferences.darkMode = true" &>/dev/null
+        case light
+            osascript -l JavaScript -e "Application('System Events').appearancePreferences.darkMode = false" &>/dev/null
+        case dark
+            osascript -l JavaScript -e "Application('System Events').appearancePreferences.darkMode = true" &>/dev/null
     end
 
     # change alacritty
@@ -30,25 +30,13 @@ function change_background
         case dark
             ln -s -f ~/.config/alacritty/themes/themes/tomorrow_night.toml ~/.config/alacritty/theme.toml
             set -U BAT_THEME Tomorrow-Night
+            alacritty-themes github_dark
             git config --global delta.light false
         case light
             ln -s -f ~/.config/alacritty/themes/themes/github_light.toml ~/.config/alacritty/theme.toml
             set -U BAT_THEME GitHub
+            alacritty-themes github_light
             git config --global delta.light true
     end
-
-    # well, seems like there is no proper way to send a command to 
-    # Vim as a client. Luckily we're using tmux, which means we can 
-    # iterate over all vim sessions and change the background ourself.
-
-    set brew_prefix (brew --prefix)
-    set -l tmux_wins ($brew_prefix/bin/tmux list-windows -t main)
-
-    # Resource init.vim for all vim instances after the theme has been changed
-    for wix in ($brew_prefix/bin/tmux list-windows -t main -F 'main:#{window_index}')
-        for pix in ($brew_prefix/bin/tmux list-panes -F 'main:#{window_index}.#{pane_index}' -t $wix)
-            set -l is_vim "ps -o state= -o comm= -t '#{pane_tty}'  | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?\$'"
-            $brew_prefix/bin/tmux if-shell -t "$pix" "$is_vim" "send-keys -t $pix ':source ~/dotfiles/neovim/init.vim' ENTER"
-        end
-    end
 end
+

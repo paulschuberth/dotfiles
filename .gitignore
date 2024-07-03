@@ -26,3 +26,4 @@ git/gitconfig-acpp-backend
 fzf_key_bindings.fish
 .config/alacritty/shell.toml
 .config/alacritty/theme.toml
+.config/alacritty/*.bak

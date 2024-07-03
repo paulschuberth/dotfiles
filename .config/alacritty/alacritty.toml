@@ -1,9 +1,6 @@
 live_config_reload = true
-
-
 import = [
-    "~/.config/alacritty/theme.toml",
-    "~/.config/alacritty/shell.toml",
+  "/opt/homebrew/lib/node_modules/alacritty-themes/themes/github_dark.toml"
 ]
 
 [font.bold]
@@ -52,9 +49,9 @@ mods = "Command"
 key = "Comma"
 mods = "Command"
 
-[keyboard.bindings.command]
-args = ["~/.config/alacritty/alacritty.yml"]
-program = "vim"
+  [keyboard.bindings.command]
+  args = [ "~/.config/alacritty/alacritty.yml" ]
+  program = "vim"
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
@@ -72,19 +69,19 @@ key = "Back"
 mods = "Super"
 
 [[keyboard.bindings]]
-chars = "\u001BOH"
+chars = "\u001bOH"
 key = "Left"
 mode = "AppCursor"
 mods = "Command"
 
 [[keyboard.bindings]]
-chars = "\u001BOF"
+chars = "\u001bOF"
 key = "Right"
 mode = "AppCursor"
 mods = "Command"
 
 [[keyboard.bindings]]
-chars = "\u001Be"
+chars = "\u001be"
 key = "E"
 mods = "Alt"
 
@@ -98,6 +95,6 @@ save_to_clipboard = true
 dynamic_title = true
 startup_mode = "Windowed"
 
-[window.padding]
-x = 4
-y = 4
+  [window.padding]
+  x = 4
+  y = 4

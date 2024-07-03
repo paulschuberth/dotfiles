@@ -4,14 +4,22 @@
 <dict>
 	<key>Label</key>
 	<string>local.launchd.conf</string>
+
+	<key>KeepAlive</key>
+	<false/>
+
+	<key>RunAtLoad</key>
+	<true/>
+
+	<key>UserName</key>
+	<string>schuberth</string>
+
 	<key>ProgramArguments</key>
 	<array>
 		<string>sh</string>
 		<string>-c</string>
 		<string>~/dotfiles/setup.sh</string>
 	</array>
-	<key>RunAtLoad</key>
-	<true/>
 	<key>StandardErrorPath</key>
 	<string>/tmp/local.job.err</string>
 	<key>StandardOutPath</key>
