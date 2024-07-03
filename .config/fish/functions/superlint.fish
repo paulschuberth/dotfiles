@@ -6,8 +6,7 @@ function superlint
     docker run \
         -e RUN_LOCAL=true \
         -e USE_FIND_ALGORITHM=true \
-        -e VALIDATE_GITLEAKS=false \
-        -e VALIDATE_CSS=false \
+        -e VALIDATE_JAVA=true \
         -v (pwd):/tmp/lint github/super-linter
 
 

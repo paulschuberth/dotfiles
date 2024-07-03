@@ -16,6 +16,7 @@ fish_add_path /Users/schuberth/.composer/vendor/bin
 fish_add_path /Users/schuberth/dotfiles/cf-utils
 fish_add_path /Users/schuberth/dotfiles/utils
 
+fish_vi_key_bindings
 
 fish_add_path $HOMEBREW_PREFIX/opt/php@8.2/bin
 fish_add_path $HOMEBREW_PREFIX/opt/php@8.2/sbin
