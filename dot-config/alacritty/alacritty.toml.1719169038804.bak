@@ -1,0 +1,100 @@
+live_config_reload = true
+import = [
+  "/opt/homebrew/lib/node_modules/alacritty-themes/themes/Tomorrow-Night.toml"
+]
+
+[font.bold]
+style = "Bold"
+
+[font.bold_italic]
+style = "Bold Italic"
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "Iosevka Term"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 4
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Command"
+
+[[keyboard.bindings]]
+key = "Comma"
+mods = "Command"
+
+  [keyboard.bindings.command]
+  args = [ "~/.config/alacritty/alacritty.yml" ]
+  program = "vim"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = " "
+key = "Space"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u0015"
+key = "Back"
+mods = "Super"
+
+[[keyboard.bindings]]
+chars = "\u001bOH"
+key = "Left"
+mode = "AppCursor"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001bOF"
+key = "Right"
+mode = "AppCursor"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001be"
+key = "E"
+mods = "Alt"
+
+[mouse]
+hide_when_typing = false
+
+[selection]
+save_to_clipboard = true
+
+[window]
+dynamic_title = true
+startup_mode = "Windowed"
+
+  [window.padding]
+  x = 4
+  y = 4

@@ -1,2 +1,1 @@
-stow -D --dir="$HOME/dotfiles" .
-stow --dir="$HOME/dotfiles" .
+stow --target=/Users/schuberth/.config --dir=/Users/schuberth/dotfiles --dotfiles --ignore='.DS_Store' -R dot-config
