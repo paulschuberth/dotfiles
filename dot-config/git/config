@@ -11,15 +11,14 @@
 
 # Settings for Project ACPP
 [includeIf "gitdir:~/code/acpp/"]
-	path = .gitconfig-acpp-local
-	path = .gitconfig-acpp
+	path = gitconfig-acpp
 
 [includeIf "gitdir:~/code/acpp/backend/"]
-	path = .gitconfig-acpp-backend
+	path = gitconfig-acpp-backend
 
 # Settings for 
 [includeIf "gitdir:~/code/personal/"]
-	path = ~/dotfiles/.config/git/gitconfig-personal
+	path = gitconfig-personal
 [diff]
 	tool = difftastic
 
