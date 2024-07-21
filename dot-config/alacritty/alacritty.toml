@@ -13,7 +13,7 @@ style = "Bold Italic"
 style = "Italic"
 
 [font.normal]
-family = "Iosevka Term"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [font.offset]
@@ -50,7 +50,7 @@ key = "Comma"
 mods = "Command"
 
   [keyboard.bindings.command]
-  args = [ "~/.config/alacritty/alacritty.yml" ]
+  args = [ "~/.config/alacritty/alacritty.toml" ]
   program = "vim"
 
 [[keyboard.bindings]]
