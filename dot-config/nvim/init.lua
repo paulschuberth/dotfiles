@@ -19,7 +19,14 @@ require("lazy").setup({
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
 	},
-    "cormacrelf/dark-notify"
+    "cormacrelf/dark-notify",
+    {
+    'MeanderingProgrammer/markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' },
+    config = function()
+        require('render-markdown').setup({})
+    end,
+}
 
 })
 
