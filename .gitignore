@@ -28,3 +28,4 @@ fzf_key_bindings.fish
 .config/alacritty/theme.toml
 .config/alacritty/*.bak
 alacritty.toml.*.bak
+hosts.yml
