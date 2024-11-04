@@ -1,0 +1,8 @@
+# https://docs.sqlfluff.com/en/stable/configuration.html
+
+[sqlfluff]
+dialect = mysql
+
+
+max_line_length = 120
+exclude_rules = LT02
