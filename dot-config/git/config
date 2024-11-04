@@ -9,8 +9,12 @@
 [advice]
 	skippedCherryPicks = false
 
-# Settings for Project ACPP
-[includeIf "gitdir:~/code/acpp/"]
+# settings for personal projects
+[includeif "gitdir:~/code/personal/"]
+	path = gitconfig-personal
+
+# settings for project acpp
+[includeif "gitdir:~/code/acpp/"]
 	path = gitconfig-acpp
 
 [includeIf "gitdir:~/code/acpp/backend/"]
@@ -37,7 +41,7 @@
 [pager]
 	difftool = true
 [delta]
-	light = false
+	light = true
 [rebase]
 	autostash = true
 [core]
@@ -59,3 +63,9 @@
 	ui = auto
 [maintenance]
 	repo = /Users/schuberth/code/personal/registration
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential

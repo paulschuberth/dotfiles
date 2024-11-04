@@ -46,6 +46,8 @@ fish_add_path $HOMEBREW_PREFIX/sbin
 alias vim="nvim"
 alias vi="nvim"
 alias python="python3"
+alias gs="git status"
+alias gap="git add --patch"
 
 fish_add_path $HOMEBREW_PREFIX/opt/python@3.8/bin
 fish_add_path $HOMEBREW_PREFIX/opt/node@20/bin
