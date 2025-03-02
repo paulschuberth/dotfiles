@@ -1,5 +1,5 @@
 
-# change background to the other mode. 
+# change background to the other mode.
 function change_background
 
     # Try to get the current mode
@@ -28,15 +28,12 @@ function change_background
     set -e BAT_THEME
     switch $new_mode
         case dark
-            ln -s -f ~/.config/alacritty/themes/themes/tomorrow_night.toml ~/.config/alacritty/theme.toml
+            ln -s -f /opt/homebrew/lib/node_modules/alacritty-themes/themes/tomorrow_night.toml ~/.config/alacritty/theme.toml
             set -U BAT_THEME Tomorrow-Night
-            alacritty-themes github_dark
             git config --global delta.light false
         case light
-            ln -s -f ~/.config/alacritty/themes/themes/github_light.toml ~/.config/alacritty/theme.toml
+            ln -s -f /opt/homebrew/lib/node_modules/alacritty-themes/themes/github_light.toml ~/.config/alacritty/theme.toml
             set -U BAT_THEME GitHub
-            alacritty-themes github_light
             git config --global delta.light true
     end
 end
-
