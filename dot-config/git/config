@@ -56,7 +56,7 @@
 	defaultBranch = main
 [rerere]
 	enabled = true
-	autoUpdate = false
+	autoUpdate = true
 [column]
 	ui = auto
 [maintenance]

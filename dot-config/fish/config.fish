@@ -7,6 +7,12 @@ set -gx LANGUAGE en_US.UTF-8
 
 eval (brew shellenv)
 
+# Rancher
+fish_add_path $HOME/.rd/bin
+
+# Make testcontainers use Rancher
+export TESTCONTAINERS_HOST_OVERRIDE=$(rdctl shell ip a show rd0 | awk '/inet / {sub("/.*",""); print $2}')
+
 fish_add_path /Users/schuberth/bin
 fish_add_path /Users/schuberth/.sdkman/bin
 fish_add_path /Users/schuberth/go/bin
@@ -22,8 +28,10 @@ fish_add_path $HOMEBREW_PREFIX/opt/php@8.2/bin
 fish_add_path $HOMEBREW_PREFIX/opt/php@8.2/sbin
 
 set fish_greeting
-set -x GOPATH /Users/schuberth/code
-set -x GOBIN /Users/schuberth/go/bin
+
+# Golang
+set -xg GOPATH /Users/schuberth/code
+set -xg GOBIN /Users/schuberth/go/bin
 
 set -xg ALACRITTY_THEME_DARK Tomorrow-Night
 set -xg ALACRITTY_THEME_LIGHT github_light_default
@@ -66,4 +74,3 @@ git config --global alias.clean-branches "!git branch | grep -v -e main -e maste
 fzf_configure_bindings --variables=\cv --processes=\cp --git_status=\cs --directory=\cf --git_log=\ch --history=\cr
 
 zoxide init --cmd cd fish | source
-
