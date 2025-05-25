@@ -31,9 +31,11 @@ function change_background
             ln -s -f /opt/homebrew/lib/node_modules/alacritty-themes/themes/tomorrow_night.toml ~/.config/alacritty/theme.toml
             set -U BAT_THEME Tomorrow-Night
             git config --global delta.light false
+            alacritty-themes github_dark
         case light
             ln -s -f /opt/homebrew/lib/node_modules/alacritty-themes/themes/github_light.toml ~/.config/alacritty/theme.toml
             set -U BAT_THEME GitHub
             git config --global delta.light true
+            alacritty-themes github_light
     end
 end
