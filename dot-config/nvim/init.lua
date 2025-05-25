@@ -12,22 +12,26 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	"williamboman/mason.nvim",
-	"tpope/vim-fugitive",
-	{
-		'projekt0n/github-nvim-theme',
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
-	},
+    "williamboman/mason.nvim",
+    "tpope/vim-fugitive",
+    {
+        'projekt0n/github-nvim-theme',
+        lazy = false, -- make sure we load this during startup if it is your main colorscheme
+        priority = 1000, -- make sure to load this before all the other start plugins
+    },
     "cormacrelf/dark-notify",
     {
-    'MeanderingProgrammer/markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' },
-    config = function()
-        require('render-markdown').setup({})
-    end,
-}
-
+        'MeanderingProgrammer/markdown.nvim',
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' },
+        config = function()
+            require('render-markdown').setup({})
+        end,
+    },
+    {
+        "ibhagwan/fzf-lua",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = {}
+    }
 })
 
 -- Setup automatic LSP servers
@@ -58,4 +62,15 @@ dn.run({
     }
 })
 -- vim.cmd [[colorscheme github_dark]]
+
+require("fzf-lua").setup("fzf-tmux")
+-- Fzf Lua key mappings
+vim.keymap.set('n', '<leader>ff', function() vim.cmd.FzfLua("files") end , opt)
+
+vim.keymap.set('n', '<leader>gc', function() vim.cmd.FzfLua("git_commits") end , opt)
+vim.keymap.set('n', '<leader>gb', function() vim.cmd.FzfLua("git_branches") end , opt)
+vim.keymap.set('n', '<leader>gb', function() vim.cmd.FzfLua("git_branches") end , opt)
+vim.keymap.set('n', '<leader>gd', function() vim.cmd.FzfLua("git_diff") end , opt)
+
+vim.keymap.set('n', '<leader>gf', function() vim.cmd.FzfLua("live_grep") end , opt)
 
