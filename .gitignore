@@ -29,3 +29,4 @@ fzf_key_bindings.fish
 .config/alacritty/*.bak
 alacritty.toml.*.bak
 hosts.yml
+dot-config/fish/fish_variables
