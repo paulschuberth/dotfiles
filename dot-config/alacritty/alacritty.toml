@@ -1,12 +1,8 @@
-
-[font.bold]
-style = "Bold"
-
-[font.bold_italic]
-style = "Bold Italic"
-
-[font.italic]
-style = "Italic"
+[general]
+live_config_reload = true
+import = [
+  "theme.toml",
+]
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
@@ -94,9 +90,3 @@ startup_mode = "Windowed"
   [window.padding]
   x = 4
   y = 4
-
-[general]
-live_config_reload = true
-import = [
-  "/Users/schuberth/.config/alacritty/theme.toml"
-]
