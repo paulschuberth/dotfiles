@@ -31,7 +31,8 @@ require("lazy").setup({
         "ibhagwan/fzf-lua",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {}
-    }
+    },
+    { 'catppuccin/nvim', name = 'catppuccin' }
 })
 
 -- Setup automatic LSP servers
@@ -54,10 +55,10 @@ local dn = require('dark_notify')
 dn.run({
     schemes = {
       dark  = {
-          colorscheme = "github_dark"
+          colorscheme = "catppuccin-macchiato"
       },
       light = {
-          colorscheme = "github_light"
+          colorscheme = "catppuccin-latte"
       }
     }
 })
@@ -65,12 +66,12 @@ dn.run({
 
 require("fzf-lua").setup("fzf-tmux")
 -- Fzf Lua key mappings
-vim.keymap.set('n', '<leader>ff', function() vim.cmd.FzfLua("files") end , opt)
+vim.keymap.set('n', '<leader>dd', function() vim.cmd.FzfLua("files") end , opt)
 
 vim.keymap.set('n', '<leader>gc', function() vim.cmd.FzfLua("git_commits") end , opt)
 vim.keymap.set('n', '<leader>gb', function() vim.cmd.FzfLua("git_branches") end , opt)
 vim.keymap.set('n', '<leader>gb', function() vim.cmd.FzfLua("git_branches") end , opt)
 vim.keymap.set('n', '<leader>gd', function() vim.cmd.FzfLua("git_diff") end , opt)
 
-vim.keymap.set('n', '<leader>gf', function() vim.cmd.FzfLua("live_grep") end , opt)
+vim.keymap.set('n', '<leader>ff', function() vim.cmd.FzfLua("live_grep") end , opt)
 

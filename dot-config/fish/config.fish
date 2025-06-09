@@ -1,4 +1,3 @@
-
 set -gx PATH "$PATH:/Users/schuberth/bin:/Users/schuberth/.sdkman/bin"
 set -gx EDITOR vim
 set -gx LC_ALL en_US.UTF-8
@@ -9,9 +8,6 @@ eval (brew shellenv)
 
 # Rancher
 fish_add_path $HOME/.rd/bin
-
-# Make testcontainers use Rancher
-export TESTCONTAINERS_HOST_OVERRIDE=$(rdctl shell ip a show rd0 | awk '/inet / {sub("/.*",""); print $2}')
 
 fish_add_path /Users/schuberth/bin
 fish_add_path /Users/schuberth/.sdkman/bin

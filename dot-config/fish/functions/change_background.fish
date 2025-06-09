@@ -29,13 +29,13 @@ function change_background
     switch $new_mode
         case dark
             ln -s -f /opt/homebrew/lib/node_modules/alacritty-themes/themes/tomorrow_night.toml ~/.config/alacritty/theme.toml
-            set -U BAT_THEME Tomorrow-Night
+            set -U BAT_THEME Catppuccin-Macchiato
             git config --global delta.light false
-            alacritty-themes github_dark
+            alacritty-themes Catppuccin-Macchiato
         case light
             ln -s -f /opt/homebrew/lib/node_modules/alacritty-themes/themes/github_light.toml ~/.config/alacritty/theme.toml
-            set -U BAT_THEME GitHub
+            set -U BAT_THEME Catppuccin-Latte
             git config --global delta.light true
-            alacritty-themes github_light
+            alacritty-themes Catppuccin-Latte
     end
 end
