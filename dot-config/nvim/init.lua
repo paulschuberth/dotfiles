@@ -1,13 +1,13 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -32,7 +32,30 @@ require("lazy").setup({
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {}
     },
-    { 'catppuccin/nvim', name = 'catppuccin' }
+    { 'catppuccin/nvim', name = 'catppuccin' },
+    {
+        "epwalsh/obsidian.nvim",
+        version = "*",  -- recommended, use latest release instead of latest commit
+        lazy = true,
+        event = {
+            "BufReadPre /Users/schuberth/Documents/Notes/*.md",
+            "BufNewFile /Users/schuberth/Documents/Notes/*.md",
+        },
+        dependencies = {
+            -- Required.
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+            "nvim-treesitter",
+        },
+        opts = {
+            workspaces = {
+                {
+                    name = "Notes",
+                    path = "~/Documents/Notes",
+                },
+            },
+        },
+    },
 })
 
 -- Setup automatic LSP servers
@@ -42,6 +65,9 @@ require("mason").setup()
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
+
+-- Character conceal level
+vim.opt.conceallevel = 2
 
 -- Indentation
 vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
@@ -54,12 +80,12 @@ local dn = require('dark_notify')
 -- Configure
 dn.run({
     schemes = {
-      dark  = {
-          colorscheme = "catppuccin-macchiato"
-      },
-      light = {
-          colorscheme = "catppuccin-latte"
-      }
+        dark  = {
+            colorscheme = "catppuccin-macchiato"
+        },
+        light = {
+            colorscheme = "catppuccin-latte"
+        }
     }
 })
 -- vim.cmd [[colorscheme github_dark]]
