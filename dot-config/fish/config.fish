@@ -54,7 +54,7 @@ alias gs="git status"
 alias gap="git add --patch"
 
 fish_add_path $HOMEBREW_PREFIX/opt/python@3.8/bin
-fish_add_path $HOMEBREW_PREFIX/opt/node@20/bin
+fish_add_path /opt/homebrew/opt/node@22/bin
 
 # Pack completion
 source (pack completion --shell fish)
