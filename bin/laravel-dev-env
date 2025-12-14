@@ -10,7 +10,7 @@ tmux split-window -t 'Laravel Dev' -b -l 66%
 tmux split-window -t 'Laravel Dev' -b -l 50%
 
 # Run services in first four panes
-tmux send-keys -t 'Laravel Dev.1' ./vendor/laravel/dusk/bin/chromedriver-mac-arm Enter
+tmux send-keys -t 'Laravel Dev.1' './vendor/laravel/dusk/bin/chromedriver-mac-arm --port=9515' Enter
 tmux send-keys -t 'Laravel Dev.2' 'npm run dev' Enter
 tmux send-keys -t 'Laravel Dev.3' 'php artisan serve' Enter
 tmux send-keys -t 'Laravel Dev.4' 'sail up' Enter
