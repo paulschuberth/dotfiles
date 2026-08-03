@@ -86,6 +86,7 @@ save_to_clipboard = true
 [window]
 dynamic_title = true
 startup_mode = "Windowed"
+option_as_alt = "Both"
 
   [window.padding]
   x = 4
