@@ -6,8 +6,6 @@ set -gx LANGUAGE en_US.UTF-8
 
 eval (brew shellenv)
 
-# Rancher
-fish_add_path $HOME/.rd/bin
 
 fish_add_path /Users/schuberth/bin
 fish_add_path /Users/schuberth/.sdkman/bin
@@ -17,6 +15,9 @@ fish_add_path /Users/schuberth/Library/Python/3.9/bin
 fish_add_path /Users/schuberth/.composer/vendor/bin
 fish_add_path /Users/schuberth/dotfiles/cf-utils
 fish_add_path /Users/schuberth/dotfiles/utils
+
+fish_add_path $HOMEBREW_PREFIX/opt/mysql@5.6/bin
+fish_add_path $HOMEBREW_PREFIX/sbin
 
 fish_vi_key_bindings
 
@@ -43,8 +44,6 @@ if status is-interactive
     end
 end
 
-fish_add_path $HOMEBREW_PREFIX/opt/mysql@5.6/bin
-fish_add_path $HOMEBREW_PREFIX/sbin
 
 # Aliases
 alias vim="nvim"
@@ -70,3 +69,12 @@ git config --global alias.clean-branches "!git branch | grep -v -e main -e maste
 fzf_configure_bindings --variables=\cv --processes=\cp --git_status=\cs --directory=\cf --git_log=\ch --history=\cr
 
 zoxide init --cmd cd fish | source
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+set --export --prepend PATH "/Users/schuberth/.rd/bin"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+# Testcontainers with Rancher Desktop
+# export TESTCONTAINERS_HOST_OVERRIDE=$(rdctl shell ip a show vznat | awk '/inet / {sub("/.*",""); print $2}')
+
+export TESTCONTAINERS_HOST_OVERRIDE=$(rdctl shell ip a show rd1 | awk '/inet / {sub("/.*",""); print $2}')
