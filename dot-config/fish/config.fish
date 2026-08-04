@@ -15,6 +15,7 @@ fish_add_path /Users/schuberth/Library/Python/3.9/bin
 fish_add_path /Users/schuberth/.composer/vendor/bin
 fish_add_path /Users/schuberth/dotfiles/cf-utils
 fish_add_path /Users/schuberth/dotfiles/utils
+fish_add_path /Users/schuberth/dotfiles/tools-by-ai
 
 fish_add_path $HOMEBREW_PREFIX/opt/mysql@5.6/bin
 fish_add_path $HOMEBREW_PREFIX/sbin
