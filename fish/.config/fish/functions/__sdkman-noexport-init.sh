@@ -17,16 +17,16 @@
 #
 
 # set env vars if not set
-if [ -z "$SDKMAN_VERSION" ]; then
-:
+if [ -z "$SDKMAN_CANDIDATES_API" ]; then
+	:
 fi
 
-if [ -z "$SDKMAN_CANDIDATES_API" ]; then
-:
+if [ -z "$SDKMAN_BROKER_API" ]; then
+	:
 fi
 
 if [ -z "$SDKMAN_DIR" ]; then
-:
+	:
 fi
 
 # Load the sdkman config if it exists.
@@ -34,63 +34,8 @@ if [ -f "${SDKMAN_DIR}/etc/config" ]; then
 	source "${SDKMAN_DIR}/etc/config"
 fi
 
-# infer platform
-function infer_platform() {
-	local kernel
-	local machine
-	
-	kernel="$(uname -s)"
-	machine="$(uname -m)"
-	
-	case $kernel in
-	Linux)
-	  case $machine in
-	  i686)
-		echo "LinuxX32"
-		;;
-	  x86_64)
-		echo "LinuxX64"
-		;;
-	  armv6l)
-		echo "LinuxARM32HF"
-		;;
-	  armv7l)
-		echo "LinuxARM32HF"
-		;;
-	  armv8l)
-		echo "LinuxARM32HF"
-		;;
-	  aarch64)
-		echo "LinuxARM64"
-		;;
-	  *)
-	  	echo "Exotic"
-	  	;;
-	  esac
-	  ;;
-	Darwin)
-	  case $machine in
-	  x86_64)
-		echo "DarwinX64"
-		;;
-	  arm64)
-		if [[ "$sdkman_rosetta2_compatible" == 'true' ]]; then
-			echo "DarwinX64"
-		else
-			echo "DarwinARM64"
-		fi
-		;;
-	  *)
-	  	echo "DarwinX64"
-	  	;;
-	  esac
-	  ;;
-	*)
-	  echo "$kernel"
-	esac
-}
-
-SDKMAN_PLATFORM="$(infer_platform | tr '[:upper:]' '[:lower:]')"
+# Read the platform file
+SDKMAN_PLATFORM="$(cat "${SDKMAN_DIR}/var/platform")"
 :
 
 # OS specific support (must be 'true' or 'false').
@@ -171,8 +116,8 @@ fi
 for candidate_name in "${SDKMAN_CANDIDATES[@]}"; do
 	candidate_dir="${SDKMAN_CANDIDATES_DIR}/${candidate_name}/current"
 	if [[ -h "$candidate_dir" || -d "${candidate_dir}" ]]; then
-:
-:
+		:
+		:
 	fi
 done
 unset candidate_name candidate_dir
@@ -223,7 +168,7 @@ if [[ "$sdkman_auto_env" == "true" ]]; then
 				sdk env
 			fi
 
-:
+			:
 		}
 		
 		trimmed_prompt_command="${PROMPT_COMMAND%"${PROMPT_COMMAND##*[![:space:]]}"}"
